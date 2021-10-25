@@ -74,6 +74,7 @@ img {
 .body {
   font-weight: 400;
   font-size: clamp(1.6rem, 10vw, 1.8rem);
+  font-size: 1.6rem;
   font-family: "Archia", Helvetica, sans-serif;
   line-height: 140%;
 }
@@ -178,5 +179,9 @@ img {
   font-weight: 600;
   font-size: 1rem;
   line-height: 140%;
+}
+
+.grey {
+  color: var(--grey);
 }
 /*# sourceMappingURL=variables.css.map */

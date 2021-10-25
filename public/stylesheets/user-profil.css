@@ -1,0 +1,102 @@
+.user_profil {
+  width: 100%;
+  margin-top: 1.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user_profil .user_main_infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1.6rem 0 2.4rem;
+}
+
+.user_profil .user_main_infos img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.user_profil .user_main_infos .body-bold {
+  margin: .8rem 0 .4rem;
+}
+
+.user_profil .user_stats-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user_profil .user_stats-container .user_stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.user_profil .user_about {
+  width: 100%;
+}
+
+.user_profil .line-separation {
+  margin-top: 3.2rem;
+}
+
+.user_profil_infos_container,
+.user_profil_infos_container-danger {
+  width: 100%;
+  margin-top: 1.6rem;
+}
+
+.user_profil_infos_container h3,
+.user_profil_infos_container-danger h3 {
+  margin-bottom: 1.6rem;
+}
+
+.user_profil_infos_container .user_profil_infos_container-infos--item,
+.user_profil_infos_container-danger .user_profil_infos_container-infos--item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+
+.user_profil_infos_container-danger {
+  margin-top: 2.4rem;
+}
+
+.user_profil_infos_container-danger h3 {
+  margin-bottom: .8rem;
+}
+/*# sourceMappingURL=user-profil.css.map */
