@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/index', function(req, res, next){
-  res.send('partials/index');
+router.get('/', function(req, res, next){
+  res.send('index');
 })
 
-router.get('/login' , function(req, res, next){
-  res.render('partials/login/signin');
+router.get('/login', function(req, res, next){
+  res.render('partials/login/signin.hbs');
 })
 
 router.get('/signup', function(req, res, next){

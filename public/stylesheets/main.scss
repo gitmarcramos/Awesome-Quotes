@@ -1,0 +1,63 @@
+@import url('/stylesheets/reset.css');
+@import url('/stylesheets/variables.css');
+@import url("/stylesheets/quote-card.css");
+
+/* -------------------------- // for all the pages! ------------------------- */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+}
+
+
+/* -------------------------- //for the index page -------------------------- */
+.index_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    text-decoration: none;
+}
+
+.index_container img {
+    width: clamp(170px, 5vw, 200px);
+    margin-bottom: 4.8rem
+}
+
+
+
+/* ----------------------------- //for the menu ----------------------------- */
+.menu_container {
+    padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+
+
+    .burger {
+        display: flex;
+        gap: .4rem;
+        flex-direction: column;
+
+        .burger__line {
+            width: 3rem;
+            height: 1px;
+            background-color: var(--main);
+        }
+    }
+
+    .nav-logo{
+        flex: 1;
+        max-width: 160px;
+    }
+
+}

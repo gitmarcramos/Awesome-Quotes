@@ -48,7 +48,17 @@ a {
   padding: .4rem;
 }
 
+img {
+  width: 100px;
+}
+
 /* ----------------------------- // DESIGN TAGS ----------------------------- */
+.line-separation {
+  width: 100%;
+  background-color: var(--main);
+  height: .5px;
+}
+
 .title {
   font-family: "Chaney", Helvetica, sans-serif;
   font-size: 2rem;
@@ -115,7 +125,7 @@ a {
   font-family: "Archia";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.2clarem;
   line-height: 100%;
 }
 

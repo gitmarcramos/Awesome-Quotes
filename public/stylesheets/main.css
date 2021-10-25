@@ -1,3 +1,86 @@
-@import url('/stylesheets/reset.css');
-@import url('/stylesheets/variables.css');
+@import url("/stylesheets/reset.css");
+@import url("/stylesheets/variables.css");
 @import url("/stylesheets/quote-card.css");
+/* -------------------------- // for all the pages! ------------------------- */
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+}
+
+/* -------------------------- //for the index page -------------------------- */
+.index_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100vh;
+  text-decoration: none;
+}
+
+.index_container img {
+  width: clamp(170px, 5vw, 200px);
+  margin-bottom: 4.8rem;
+}
+
+/* ----------------------------- //for the menu ----------------------------- */
+.menu_container {
+  padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--background);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7rem;
+}
+
+.menu_container .burger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu_container .burger .burger__line {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--main);
+}
+
+.menu_container .nav-logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 160px;
+}
+/*# sourceMappingURL=main.css.map */
