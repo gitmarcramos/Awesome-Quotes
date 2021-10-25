@@ -70,6 +70,7 @@
           align-items: center;
   height: 7rem;
   position: relative;
+  z-index: 9999;
 }
 
 .menu_container .menu_container__nav .burger {
@@ -109,7 +110,7 @@
 }
 
 .menu_container .menu {
-  padding: clamp(1.6rem, 10vw, 1.8rem);
+  padding: 3.2rem clamp(1.6rem, 10vw, 1.8rem);
   background-color: var(--background);
   width: 100%;
   height: 100vh;
@@ -120,17 +121,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: absolute;
-  top: 0;
+  top: 7rem;
   left: -100%;
-  z-index: -1;
   -webkit-transition: -webkit-transform 600ms ease-in-out;
   transition: -webkit-transform 600ms ease-in-out;
   transition: transform 600ms ease-in-out;
   transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
+  z-index: 100;
 }
 
 .menu_container .menu a {

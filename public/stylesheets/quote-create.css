@@ -33,7 +33,7 @@
   border-color: var(--main);
 }
 
-#quote-create .button-add_person {
+#quote-create .button--add_person {
   margin-left: auto;
 }
 
