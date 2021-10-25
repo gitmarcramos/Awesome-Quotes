@@ -26,17 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-const indexRouter = require("./routes/index.routes");
-const usersRouter = require("./routes/users.routes");
-const authRouter = require("./routes/auth.routes");
-
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/auth", authRouter);
-
-app.use(require("./middlewares/exposeLoginStatus"));
-
-// SESSION SETUP
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -49,6 +38,19 @@ app.use(
     resave: true,
   })
 );
+
+
+const indexRouter = require("./routes/index.routes");
+const usersRouter = require("./routes/users.routes");
+const authRouter = require("./routes/auth.routes");
+
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/auth", authRouter);
+
+app.use(require("./middlewares/exposeLoginStatus"));
+
+// SESSION SETUP
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
