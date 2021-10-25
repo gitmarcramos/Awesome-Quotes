@@ -5,7 +5,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www -e .hbs,.js"
+    "dev": "nodemon ./bin/www -e .hbs,.js",
+    "seed:user": "node ./bin/seed/Users.seed.js",
+    "seed:quote": "node ./bin/seed/Quotes.seed.js",
+    "seed:all": "npm run seed:user && npm run seed:quote"
   },
   "author": "Marc Ramos",
   "contributors": ["Paul Riveron", "Joey Jang"],
