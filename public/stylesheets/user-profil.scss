@@ -1,0 +1,68 @@
+.user_profil {
+    width: 100%;
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .user_main_infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1.6rem 0 2.4rem;
+        
+        img{
+            object-fit: contain;
+        }
+        
+        .body-bold {
+            margin: .8rem 0 .4rem;
+        }
+    }
+
+    .user_stats-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .user_stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.4rem
+        }
+    }
+
+    .user_about {
+        width: 100%;
+    }
+
+    .line-separation {
+        margin-top: 3.2rem;
+    }
+}
+
+.user_profil_infos_container,
+.user_profil_infos_container-danger {
+    width: 100%;
+    margin-top: 1.6rem;
+
+    h3 {
+        margin-bottom: 1.6rem;
+    }
+
+    .user_profil_infos_container-infos--item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.6rem
+    }
+}
+
+.user_profil_infos_container-danger {
+    margin-top: 2.4rem;
+
+    h3{
+        margin-bottom: .8rem
+    }
+}

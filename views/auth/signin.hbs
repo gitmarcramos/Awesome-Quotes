@@ -1,6 +1,7 @@
 <h1>LOG IN</h1>
 
-<form method="post" action="/auth/login" class="form">
+<form method="post" action="/auth/signin" class="form">
+    {{> flashMessage }}
 
     <label for="email">email</label>
     <input class="input" type="email" id="email" name="email" value="test@email.com">
@@ -10,5 +11,4 @@
 </form>
 
 <span class="suggestion-modal"> Don't have an account yet ? </span>
-<a href="/auth/creat-account" class="links"> Create an account</a>
-
+<a href="/auth/signup" class="links"> Create an account</a>

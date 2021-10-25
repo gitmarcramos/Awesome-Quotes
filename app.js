@@ -7,10 +7,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const hbs = require("hbs");
 
-const indexRouter = require("./routes/index.routes");
-const usersRouter = require("./routes/users.routes");
-const { hasSubscribers } = require("diagnostics_channel");
-const authRouter = require("./routes/auth.routes");
+
 
 const app = express();
 
@@ -25,6 +22,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+const indexRouter = require("./routes/index.routes");
+const usersRouter = require("./routes/users.routes");
+const authRouter = require("./routes/auth.routes");
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
