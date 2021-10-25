@@ -8,15 +8,15 @@ const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 // DEBUG has to be removed
 
 router.get("/login", function (req, res, next) {
-  res.render("/auth/signin.hbs");
+  res.render("auth/login.hbs");
 });
 
 router.get("/create-account", function (req, res, next) {
-  res.render("/auth/signup");
+  res.render("auth/create-account");
 });
 
 router.get("/", function (req, res, next) {
-  res.redirect("/auth/signin");
+  res.redirect("/auth/login");
 });
 
 router.post("/login", async function (req, res, next) {
@@ -41,26 +41,26 @@ router.post("/login", async function (req, res, next) {
   }
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/create-account", async (req, res, next) => {
   try {
     const newUser = { ...req.body };
-    const foundUser = await User.findOne({ mail: newUser.mail });
+    const foundUser = await useeerModel.findOne({ mail: newUser.mail });
 
+    console.log(newUser);
     if (foundUser) {
-      res.redirect("/auth/signup");
+      console.error("account already exist")
+      res.redirect("/auth/create-account");
     } else {
       const hashedPassword = bcrypt.hashSync(newUser.password, 10);
       newUser.password = hashedPassword;
+      newUser.creationDate = new Date(Date.now());
+      console.log(newUser);
       await userModel.create(newUser);
       res.redirect("/auth/login");
     }
   } catch (err) {
-    let errorMessage = "";
-    for (field in err.errors) {
-      errorMessage += err.errors[field].message + "\n";
-    }
-    console.error(errorMessage);
-    res.redirect("/auth/signup");
+    console.error(err);
+    res.redirect("/auth/create-account");
   }
 });
 
