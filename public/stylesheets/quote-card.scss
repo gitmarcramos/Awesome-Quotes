@@ -1,0 +1,58 @@
+.quote {
+    padding: 1.6rem 1.6rem 2.4rem 1.6rem;
+    border: .05rem solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3.2rem;
+    max-width: 300px;
+
+    .quote_header {
+        width: 100%;
+
+        .quote_header__infos {
+            margin-bottom: 1.2rem;
+            display: flex;
+
+            .publication-date {
+                display: block;
+                margin-top: .04rem;
+            }
+        }
+
+        .quote_header__hashtags{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .quote-body {
+        width: 100%;
+        margin: 24px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        .quote_atom:nth-child(even){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+
+    .quote_social {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .quote_social__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .8rem;
+        }
+    }
+}

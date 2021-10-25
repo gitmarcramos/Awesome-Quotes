@@ -1,1 +1,4 @@
-@import url('/stylesheets/variables.css')
+
+@import url('/stylesheets/reset.css');
+@import url('/stylesheets/variables.css');
+@import url("/stylesheets/quote-card.css");

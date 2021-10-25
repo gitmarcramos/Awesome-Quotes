@@ -1,31 +1,172 @@
+:root {
+  font-size: 10px;
+  /* -------------------------------- // COLORS ------------------------------- */
+  --background: #FFFCEC;
+  --main: #444444;
+  --grey: #696969;
+  --warning: #FF3434
+;
+}
+
 @font-face {
-    font-family: "Chaney";
-    src: url("/fonts/chaney-regular-webfont.ttf") format("ttf"),
-           url("/fonts/chaney-regular-webfont.woff") format("woff"),
-           url("/fonts/chaney-regular-webfont.woff2") format("woff2"),
-   }
+  font-family: "Chaney";
+  src: url("/fonts/chaney-regular-webfont.ttf") format("ttf"), url("/fonts/chaney-regular-webfont.woff") format("woff"), url("/fonts/chaney-regular-webfont.woff2") format("woff2");
+}
+
 @font-face {
-    font-family: "archia regular";
-    src: url("/fonts/archia-regular-webfont.ttf") format("ttf"),
-           url("/fonts/archia-regular-webfont.woff") format("woff"),
-           url("/fonts/archia-regular-webfont.woff2") format("woff2"),
-   }
-
-
-:root{
-font-size: 10px;
+  font-family: "Archia";
+  src: url("/fonts/archia-regular-webfont.ttf") format("ttf"), url("/fonts/archia-regular-webfont.woff") format("woff"), url("/fonts/archia-regular-webfont.woff2") format("woff2");
+  font-weight: 400;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: "Archia";
+  src: url("/fonts/archia-medium-webfont.ttf") format("ttf"), url("/fonts/archia-medium-webfont.woff") format("woff"), url("/fonts/archia-medium-webfont.woff2") format("woff2");
+  font-weight: 500;
 }
 
-.title{
-font-family: "Chaney", Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Archia";
+  src: url("/fonts/archia-semibold-webfont.ttf") format("ttf"), url("/fonts/archia-semibold-webfont.woff") format("woff"), url("/fonts/archia-semibold-webfont.woff2") format("woff2");
+  font-weight: 600;
 }
 
-.body{
-    font-family: "archia regular";
+@font-face {
+  font-family: "Archia";
+  src: url("/fonts/archia-semibold-webfont.ttf") format("ttf"), url("/fonts/archia-semibold-webfont.woff") format("woff"), url("/fonts/archia-semibold-webfont.woff2") format("woff2");
+  font-weight: 700;
 }
+
+/* ----------------------------- // GENERAL TAGS ---------------------------- */
+body {
+  color: var(--main);
+  background-color: var(--background);
+}
+
+a {
+  color: var(--main);
+  padding: .4rem;
+}
+
+/* ----------------------------- // DESIGN TAGS ----------------------------- */
+.title {
+  font-family: "Chaney", Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-family: "Archia";
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 140%;
+}
+
+.body {
+  font-weight: 400;
+  font-size: clamp(1.6rem, 10vw, 1.8rem);
+  font-family: "Archia", Helvetica, sans-serif;
+  line-height: 140%;
+}
+
+.body-bold {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 7000;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+
+.links {
+  font-family: "Archia";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 100%;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.hashtags {
+  font-family: "Archia";
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.published-by {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 130%;
+}
+
+.published-by-link {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 130%;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.publication-date {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 100%;
+}
+
+.instructions {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 140%;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.error-message {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 100%;
+}
+
+.social-links {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.add-btn {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+}
+
+.suggestion-modal {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+}
+
+.span-edit {
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+}
+/*# sourceMappingURL=variables.css.map */
