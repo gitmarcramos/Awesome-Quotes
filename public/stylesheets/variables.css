@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Chaney";
+    src: url("/fonts/chaney-regular-webfont.ttf") format("ttf"),
+           url("/fonts/chaney-regular-webfont.woff") format("woff"),
+           url("/fonts/chaney-regular-webfont.woff2") format("woff2"),
+   }
+@font-face {
+    font-family: "archia regular";
+    src: url("/fonts/archia-regular-webfont.ttf") format("ttf"),
+           url("/fonts/archia-regular-webfont.woff") format("woff"),
+           url("/fonts/archia-regular-webfont.woff2") format("woff2"),
+   }
+
+
+:root{
+font-size: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title{
+font-family: "Chaney", Arial, Helvetica, sans-serif;
+}
+
+.body{
+    font-family: "archia regular";
+}

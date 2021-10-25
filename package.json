@@ -7,7 +7,8 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www -e .hbs,.js"
   },
-  "author": "Marc Ramos, Paulr Riveron, Joey Hang",
+  "author": "Marc Ramos",
+  "contributors": ["Paul Riveron", "Joey Jang"],
   "license": "ISC",
   "repository": {
     "type": "git",
