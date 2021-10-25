@@ -10,6 +10,7 @@ const hbs = require("hbs");
 const indexRouter = require("./routes/index.routes");
 const usersRouter = require("./routes/users.routes");
 const { hasSubscribers } = require("diagnostics_channel");
+const authRouter = require("./routes/auth.toutes");
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/auth", authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
