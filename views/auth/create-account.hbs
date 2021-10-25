@@ -1,7 +1,7 @@
 <h1>Create an account</h1>
 <img src="" alt="">
 
-<form method="post" action="/auth/signup" class="form">
+<form method="post" action="/auth/creat-account" class="form">
     {{> flashMessage }}
 
     <label for="email">email*</label>
@@ -16,8 +16,8 @@
 
     <label for="story">What is your story?</label>
     <input class="input" type="text" id="story" name="story" value="story">
-    <button class="signup_btn">Create an account</button>
+    <button class="creat-account_btn">Create an account</button>
 </form>
 <p>
-    Already got an account ? <a href="/auth/signin">signin</a>
+    Already got an account ? <a href="/auth/login">signin</a>
 </p>

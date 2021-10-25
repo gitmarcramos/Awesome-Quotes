@@ -1,10 +1,13 @@
 const express = require("express")
 const router = express.Router()
 
-router.get('/auth/login' , function(req, res, next){
-    res.render('partials/auth/signin');
+router.get('/login' , function(req, res, next){
+    res.render('auth/login');
   })
   
-  router.get('/auth/create-account', function(req, res, next){
-    res.render('partials/auth/signup');
+  router.get('/create-account', function(req, res, next){
+    res.render('auth/create-account');
   })
+
+
+  module.exports = router;
