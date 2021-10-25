@@ -3,6 +3,8 @@ require("./config/mongodb");
 const createError = require("http-errors");
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -31,13 +33,15 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 
+app.use(require("./middlewares/exposeLoginStatus"));
+
 // SESSION SETUP
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     cookie: { maxAge: 60000 }, // in millisec
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URI,
       ttl: 24 * 60 * 60, // 1 day
     }),
     saveUninitialized: true,
