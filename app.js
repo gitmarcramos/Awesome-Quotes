@@ -10,7 +10,7 @@ const hbs = require("hbs");
 const indexRouter = require("./routes/index.routes");
 const usersRouter = require("./routes/users.routes");
 const { hasSubscribers } = require("diagnostics_channel");
-const authRouter = require("./routes/auth.toutes");
+const authRouter = require("./routes/auth.routes");
 
 const app = express();
 

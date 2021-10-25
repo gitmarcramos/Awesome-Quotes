@@ -1,6 +1,6 @@
 :root {
-font-size: 10px;
-/* -------------------------------- // COLORS ------------------------------- */
+    font-size: 10px;
+    /* -------------------------------- // COLORS ------------------------------- */
     --background: #FFFCEC;
     --main: #444444;
     --grey: #696969;
@@ -47,21 +47,19 @@ font-size: 10px;
 }
 
 /* ----------------------------- // GENERAL TAGS ---------------------------- */
-body{
+body {
     color: var(--main);
     background-color: var(--background);
 }
 
-a{
+a {
     color: var(--main);
-    padding: .4rem
+    padding: .4rem .4rem .4rem 0
 }
 
-img{
-    width:100px;
+img {
+    width: 100px;
 }
-
-
 
 
 /* ----------------------------- // DESIGN TAGS ----------------------------- */
@@ -70,7 +68,6 @@ img{
     width: 100%;
     background-color: var(--main);
     height: .5px
-
 }
 
 .title {
@@ -95,7 +92,7 @@ img{
 .body-bold {
     font-family: "Archia";
     font-style: normal;
-    font-weight: 7000;
+    font-weight: 700;
     font-size: 1.6rem;
     line-height: 140%;
 }

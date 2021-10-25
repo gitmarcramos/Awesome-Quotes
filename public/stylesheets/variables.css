@@ -45,7 +45,7 @@ body {
 
 a {
   color: var(--main);
-  padding: .4rem;
+  padding: .4rem .4rem .4rem 0;
 }
 
 img {
@@ -81,7 +81,7 @@ img {
 .body-bold {
   font-family: "Archia";
   font-style: normal;
-  font-weight: 7000;
+  font-weight: 700;
   font-size: 1.6rem;
   line-height: 140%;
 }
