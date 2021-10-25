@@ -1,6 +1,9 @@
-<h1>Create an account</h1>
+{{>menu}}
+<div class="accountbody">
+<h1 class="subtitle">Create an account</h1>
 <img src="" alt="">
 
+<div class="accountform">
 <form method="post" action="/auth/create-account" class="form">
 
     <label for="mail">email*</label>
@@ -17,6 +20,9 @@
     <input class="input" type="text" id="description" name="description" value="story">
     <button class="create-account_btn">Create an account</button>
 </form>
+</div>
+</div>
+
 <p>
     Already got an account ? <a href="/auth/login">signin</a>
 </p>
