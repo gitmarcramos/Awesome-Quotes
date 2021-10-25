@@ -4,14 +4,19 @@ const bcrypt = require("bcrypt");
 const userModel = require("./../models/Users.model");
 const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 
-router.use(protectAuthRoute); // DEBUG has to be removed
+// router.use(protectAuthRoute);
+// DEBUG has to be removed
 
 router.get("/login", function (req, res, next) {
-  res.render("/auth/signin");
+  res.render("/auth/signin.hbs");
 });
 
 router.get("/create-account", function (req, res, next) {
   res.render("/auth/signup");
+});
+
+router.get("/", function (req, res, next) {
+  res.redirect("/auth/signin");
 });
 
 router.post("/login", async function (req, res, next) {
