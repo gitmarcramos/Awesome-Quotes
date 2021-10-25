@@ -23,6 +23,16 @@ const quotes = [
       user: "Marc",
       text: "Ou alors un tout petit chien..."
     }]
+
+  },
+
+  {
+    publisher: null,
+    dateCreatedAt: new Date('2021-10-25T14:58:00'),
+    quotes: [{
+      user: "Paul",
+      text: "Dev doing deving !"
+    }]
   }
 ];
 
@@ -35,6 +45,7 @@ const quotes = [
       userModel.findOne({name: 'Joey'}),
     ]);
     quotes[0].publisher = usersDb[2]._id;
+    quotes[1].publisher = usersDb[0]._id;
     const inserted = await quoteModel.insertMany(quotes); // insert docs in db
     console.log(`seed quotes done : ${inserted.length} documents inserted !`);
     await userModel.findOneAndUpdate(usersDb[0]._id, { $push: {
