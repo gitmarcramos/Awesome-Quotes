@@ -2,6 +2,8 @@
 @import url("/stylesheets/variables.css");
 @import url("/stylesheets/quote-card.css");
 @import url("/stylesheets/user-profil.css");
+@import url("/stylesheets/quote-create.css");
+@import url("/stylesheets/pages.css");
 /* -------------------------- // for all the pages! ------------------------- */
 .main {
   display: -webkit-box;
@@ -80,6 +82,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   cursor: pointer;
+  padding: 1.2rem 1.2rem 1.2rem 0;
 }
 
 .menu_container .menu_container__nav .burger .burger__line {
@@ -106,9 +109,10 @@
 }
 
 .menu_container .menu {
+  padding: clamp(1.6rem, 10vw, 1.8rem);
   background-color: var(--background);
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,6 +123,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 600ms ease-in-out;
+  transition: -webkit-transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
 }
 
 .menu_container .menu a {
@@ -137,7 +149,12 @@
   margin-bottom: 2.4rem;
 }
 
-.hidden {
-  display: none !important;
+.menu_container .menu-reveal {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 600ms ease-in-out;
+  transition: -webkit-transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */

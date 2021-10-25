@@ -43,10 +43,12 @@ app.use(
 const indexRouter = require("./routes/index.routes");
 const usersRouter = require("./routes/users.routes");
 const authRouter = require("./routes/auth.routes");
+const quoteRouter = require("./routes/quotes.routes")
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+app.use("/quotes", quoteRouter)
 
 app.use(require("./middlewares/exposeLoginStatus"));
 

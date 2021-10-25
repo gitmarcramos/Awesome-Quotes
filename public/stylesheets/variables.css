@@ -8,6 +8,7 @@
 ;
 }
 
+/* ------------------------------ // Font face ------------------------------ */
 @font-face {
   font-family: "Chaney";
   src: url("/fonts/chaney-regular-webfont.ttf") format("ttf"), url("/fonts/chaney-regular-webfont.woff") format("woff"), url("/fonts/chaney-regular-webfont.woff2") format("woff2");
@@ -74,7 +75,6 @@ img {
 .body {
   font-weight: 400;
   font-size: clamp(1.6rem, 10vw, 1.8rem);
-  font-size: 1.6rem;
   font-family: "Archia", Helvetica, sans-serif;
   line-height: 140%;
 }
@@ -183,5 +183,63 @@ img {
 
 .grey {
   color: var(--grey);
+}
+
+/* ------------------------------- // Buttons ------------------------------- */
+.button--primary {
+  background-color: var(--main);
+  color: var(--background);
+  cursor: pointer;
+  padding: .8rem 2.4rem;
+  font-family: "Chaney", Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.button-add_person {
+  display: block;
+  border: 1px solid var(--main);
+  padding: .4rem .8rem .4rem 2.4rem;
+  font-family: "Archia";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+  position: relative;
+  cursor: pointer;
+  margin: 1.6rem 0;
+  max-width: 100px;
+}
+
+.button-add_person::before {
+  content: url("/images/icons/plus-icon-button.png");
+  position: absolute;
+  top: 50%;
+  left: .4rem;
+  -webkit-transform: translateY(-50%) scale(0.3);
+          transform: translateY(-50%) scale(0.3);
+  width: .7rem;
+}
+
+.button-filter--unchecked {
+  background-color: var(--main);
+  color: var(--background);
+  cursor: pointer;
+  padding: .8rem 2.4rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: "Archia", Helvetica, sans-serif;
+  line-height: 100%;
+}
+
+.button-filter--checked {
+  color: var(--main);
+  border: 1px solid var(--main);
+  cursor: pointer;
+  padding: .8rem 1.2rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: "Archia", Helvetica, sans-serif;
+  line-height: 100%;
 }
 /*# sourceMappingURL=variables.css.map */

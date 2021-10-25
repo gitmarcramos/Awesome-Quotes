@@ -14,7 +14,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 3.2rem 0;
+  margin: 3.2rem 0 0;
   max-width: 300px;
 }
 
@@ -42,6 +42,10 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.quote .quote_header .line-separation {
+  margin-top: 1.2rem;
 }
 
 .quote .quote-body {

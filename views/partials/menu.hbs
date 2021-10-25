@@ -1,7 +1,7 @@
 <nav class="menu_container">
 
     <div class="menu_container__nav">
-        <div class="burger">
+        <div class="burger" id="menu_burger">
             <div class="burger__line burger__line--1"></div>
             <div class="burger__line burger__line--2"></div>
             <div class="burger__line burger__line--3"></div>
@@ -20,15 +20,15 @@
 
     <div class="line-separation"></div>
 
-    <div class="menu hidden">
+    <div class="menu" id="menu_page">
         <div class="menu__item menu__item--quote-related">
-            <a href="/create-quote" class="body-bold">Publish an Awesome Quote</a>
+            <a href="/quotes/create-quote" class="body-bold">Publish an Awesome Quote</a>
             <a href="/home/best-quotes" class="body">Best quotes</a>
-            <a href="/home/bfilter" class="body">Filter</a>
+            <a href="/home/filter" class="body">Filter</a>
         </div>
 
         <div class="menu__item menu__item--account">
-            <a href="/:id/my-account" class="body-bold">My account</a>
+            <a href="/users/my-account" class="body-bold">My account</a>
         </div>
 
         <div class="menu__item menu__item--legal">
