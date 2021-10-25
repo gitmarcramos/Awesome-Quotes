@@ -1,20 +1,44 @@
 <nav class="menu_container">
 
-    <div class="burger">
-        <div class="burger__line burger__line--1"></div>
-        <div class="burger__line burger__line--2"></div>
-        <div class="burger__line burger__line--3"></div>
+    <div class="menu_container__nav">
+        <div class="burger">
+            <div class="burger__line burger__line--1"></div>
+            <div class="burger__line burger__line--2"></div>
+            <div class="burger__line burger__line--3"></div>
+        </div>
+
+        <a class="nav-logo" href="/home">
+            <img src="/images/logo/awesome-quote-logo-inline.png" alt="Awesome Quotes logo">
+        </a>
+
+        <svg class="nav_filter" width="22" height="20" viewBox="0 0 22 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 0.663147H1L9 10.1231V16.6631L13 18.6631V10.1231L21 0.663147Z" stroke="#444444"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
     </div>
 
-    <img src="/images/logo/awesome-quote-logo-inline.png" alt="Awesome Quotes logo" class="nav-logo">
+    <div class="line-separation"></div>
 
-    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M21 0.663147H1L9 10.1231V16.6631L13 18.6631V10.1231L21 0.663147Z" stroke="#444444"
-            stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
+    <div class="menu">
+        <div class="menu__quote-related">
+            <a href="/create-quote" class="body-bold">Publish an Awesome Quote</a>
+            <a href="/home/best-quotes" class="body">Best quotes</a>
+            <a href="/home/bfilter" class="body">Filter</a>
+        </div>
 
-    <div class="line-separation "></div>
+        <div class="menu__account">
+            <a href="/:id/my-account" class="body-bold">My account</a>
+        </div>
 
+        <div class="menu__legal">
+            <a href="/about" class="body">About</a>
+            <a href="/terms-and-conditions" class="body">Terms and conditions</a>
+            <a href="/privacy-policy" class="body">Privacy policy</a>
+        </div>
+
+        <div class="menu__log-out">
+            <a href="/home" class="suggestion-modal">Logout</a>
+        </div>
+    </div>
 </nav>
-
-

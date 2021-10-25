@@ -6,6 +6,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -43,6 +47,9 @@
 /* ----------------------------- //for the menu ----------------------------- */
 .menu_container {
   padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+}
+
+.menu_container .menu_container__nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -58,9 +65,10 @@
       -ms-flex-align: center;
           align-items: center;
   height: 7rem;
+  position: relative;
 }
 
-.menu_container .burger {
+.menu_container .menu_container__nav .burger {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,18 +77,29 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
 }
 
-.menu_container .burger .burger__line {
+.menu_container .menu_container__nav .burger .burger__line {
   width: 3rem;
   height: 1px;
   background-color: var(--main);
 }
 
-.menu_container .nav-logo {
+.menu_container .menu_container__nav .nav-logo {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   max-width: 160px;
+}
+
+.menu_container .menu_container__nav .nav-logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.menu_container .menu_container__nav .nav_filter {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

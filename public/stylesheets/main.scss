@@ -5,6 +5,7 @@
 /* -------------------------- // for all the pages! ------------------------- */
 .main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 clamp(1.6rem, 10vw, 1.8rem);
@@ -32,32 +33,51 @@
 /* ----------------------------- //for the menu ----------------------------- */
 .menu_container {
     padding: 0 clamp(1.6rem, 10vw, 1.8rem);
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--background);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7rem;
 
 
-    .burger {
+    //NAV
+    .menu_container__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--background);
+        width: 100%;
         display: flex;
-        gap: .4rem;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 7rem;
+        position: relative;
 
-        .burger__line {
-            width: 3rem;
-            height: 1px;
-            background-color: var(--main);
+
+        .burger {
+            display: flex;
+            gap: .4rem;
+            flex-direction: column;
+            cursor: pointer;
+
+            .burger__line {
+                width: 3rem;
+                height: 1px;
+                background-color: var(--main);
+            }
+        }
+
+
+        .nav-logo {
+            flex: 1;
+            max-width: 160px;
+
+            img{
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+
+        .nav_filter{
+            cursor: pointer;
         }
     }
 
-    .nav-logo{
-        flex: 1;
-        max-width: 160px;
-    }
 
+    
 }

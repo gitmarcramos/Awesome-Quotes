@@ -14,12 +14,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 3.2rem;
+  margin: 3.2rem 0;
   max-width: 300px;
 }
 
 .quote .quote_header {
   width: 100%;
+  margin-bottom: 2.8rem;
 }
 
 .quote .quote_header .quote_header__infos {
@@ -45,7 +46,6 @@
 
 .quote .quote-body {
   width: 100%;
-  margin: 24px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,6 +70,7 @@
 }
 
 .quote .quote_social {
+  margin-top: 5.6rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
