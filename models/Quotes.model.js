@@ -24,7 +24,22 @@ const quoteSchema = new Schema({
       type: String,
       trim: true
     }
-  }]
+  }],
+
+  hastags: {
+    type: [String]
+  },
+
+  likes: {
+    type: Number,
+    default: 0
+  },
+
+  favorites: {
+    type: Number,
+    default: 0
+  },
+
 });
 
 const quoteModel = model("quotes", quoteSchema);
