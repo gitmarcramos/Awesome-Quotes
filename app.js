@@ -39,6 +39,7 @@ app.use(
   })
 );
 
+app.use(require("./middlewares/exposeLoginStatus"));
 
 const indexRouter = require("./routes/index.routes");
 const usersRouter = require("./routes/users.routes");
@@ -53,7 +54,7 @@ app.use("/auth", authRouter);
 app.use("/", filterRouter);
 app.use("/quotes", quoteRouter)
 
-app.use(require("./middlewares/exposeLoginStatus"));
+
 
 // SESSION SETUP
 

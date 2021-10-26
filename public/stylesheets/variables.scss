@@ -190,7 +190,7 @@ img {
     line-height: 140%;
 }
 
-.grey{
+.grey {
     color: var(--grey);
 }
 
@@ -200,7 +200,7 @@ img {
     background-color: (var(--main));
     color: var(--background);
     cursor: pointer;
-    padding: .8rem 2.4rem;
+    padding: .8rem 1.8rem;
     font-family: "Chaney", Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -218,25 +218,55 @@ img {
     margin: 1.6rem 0;
 }
 
-
-.button-filter--unchecked{
-    background-color: var(--main);
-    color: var(--background);
+.button-filter {
+    display: inline-block;
     cursor: pointer;
-    padding: .8rem 2.4rem;
+    padding: .8rem 1.2rem;
+    margin-bottom: .4rem;
     font-weight: 400;
     font-size: 1.6rem;
     font-family: "Archia", Helvetica, sans-serif;
     line-height: 100%;
 }
 
-.button-filter--checked{
+.button-filter--checked {
+    background-color: var(--main);
+    color: var(--background);
+}
+
+.button-filter--unchecked {
     color: var(--main);
     border: 1px solid var(--main);
-    cursor: pointer;
-    padding: .8rem 1.2rem;
-    font-weight: 400;
-    font-size: 1.6rem;
-    font-family: "Archia", Helvetica, sans-serif;
-    line-height: 100%;
+}
+
+button {
+    border: none;
+}
+
+
+/* -------------------------------- // Input -------------------------------- */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+
+    .input {
+        width: 100%;
+        min-height: 2.4rem;
+        background-color: var(--background);
+        border-width: 0 0 .5px;
+        border-color: var(--main);
+        margin: 1.6rem 0;
+
+    }
+
+    ::placeholder {
+        font-family: "Archia";
+        font-size: 1.2rem;
+    }
+
+
 }

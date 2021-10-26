@@ -44,7 +44,7 @@ router.post("/login", async function (req, res, next) {
 router.post("/create-account", async (req, res, next) => {
   try {
     const newUser = { ...req.body };
-    const foundUser = await useeerModel.findOne({ mail: newUser.mail });
+    const foundUser = await userModel.findOne({ mail: newUser.mail });
 
     console.log(newUser);
     if (foundUser) {
