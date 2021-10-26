@@ -8,6 +8,10 @@
     justify-content: center;
     align-items: center;
 
+    .button--primary{
+        margin-top: 3.2rem;
+    }
+
     .no_account_yet {
         margin-top: 10.4rem;
         width: 100%;
@@ -15,7 +19,7 @@
         flex-direction: column;
         align-items: center;
 
-        a{
+        a {
             margin-top: 1.2rem;
         }
     }
@@ -25,29 +29,37 @@
 /*                              // CREATE ACCOUNT                             */
 /* -------------------------------------------------------------------------- */
 
-#create_account-page{
+#create_account-page {
     padding-bottom: 7rem;
-    h1{
-        margin: 1.8rem auto;
+
+    h1 {
+        margin: 1.8rem auto .4rem;
         width: 100%;
         text-align: center;
     }
 
-    #imagePicker{
+    .account-exists {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3.2rem;
+        color: var(--grey);
+    }
+
+    #imagePicker {
         position: relative;
     }
 
-    #textImage{
+    #textImage {
         position: absolute;
-        width:0;
+        width: 0;
         height: 0;
     }
 
-    .span-edit{
+    .span-edit {
         align-self: flex-start;
     }
 
-    .button--primary{
+    .button--primary {
         margin-top: 4.2rem;
     }
 

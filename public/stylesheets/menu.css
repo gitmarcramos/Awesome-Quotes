@@ -107,4 +107,32 @@
   transition: transform 600ms ease-in-out;
   transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
 }
+
+.menu_container_second {
+  position: fixed;
+  z-index: 99999999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--background);
+}
+
+.menu_container_second a {
+  margin: 0;
+  padding: 0;
+}
+
+.menu_container_second a img {
+  width: 16rem;
+}
 /*# sourceMappingURL=menu.css.map */

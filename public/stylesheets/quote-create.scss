@@ -6,23 +6,43 @@
         cursor: pointer;
     }
 
+
+
     .ajax_form {
-        // margin-bottom: 2.4rem;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        margin-top: 3.2rem;
+        width: 100%;
 
-        .ajax_input {
+        .ajax_input{
             width: 100%;
-            margin-top: 3.2rem;
         }
 
-        .ajax_input input {
+        input,
+        textarea {
             width: 100%;
-            min-height: 2.4rem;
+            min-height: 3.2rem;
             background-color: var(--background);
-            border-width: 0 0 .5px;
+            border-width: .5px;
+            border-radius: .4rem;
             border-color: var(--main);
+            margin-bottom: 1.6rem;
+            padding: 1rem;
+            font-family: "Archia";
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+       
+
+        .ajax-form-by-person {
+            width: 100%;
+            padding: 1.2rem;
+            border: .5px solid var(--main);
+        }
+
+        #ajax-input-hashtag-container {
+            margin-top: .8rem;
         }
     }
 
@@ -36,7 +56,7 @@
         }
 
         .button--primary {
-            margin-top: 3.2rem;
+            margin: 3.2rem 0 7rem 0;
         }
     }
 

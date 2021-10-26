@@ -45,6 +45,10 @@
   text-decoration: none;
 }
 
+.index_container a {
+  text-decoration: none;
+}
+
 .index_container img {
   width: clamp(170px, 5vw, 200px);
   margin-bottom: 4.8rem;

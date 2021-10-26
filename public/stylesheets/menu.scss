@@ -74,9 +74,33 @@
         }
     }
 
-    .menu-reveal{
+    .menu-reveal {
         transform: translateX(100%);
         transition: transform 600ms ease-in-out;
+    }
+}
+
+// Second menu
+
+.menu_container_second {
+    position: fixed;
+    z-index: 99999999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+
+    a {
+        margin: 0;
+        padding: 0;
+
+        img{
+            width: 16rem;
+        }
     }
 
 

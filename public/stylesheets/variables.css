@@ -50,7 +50,7 @@ a {
 }
 
 img {
-  width: 100px;
+  width: 8rem;
 }
 
 /* ----------------------------- // DESIGN TAGS ----------------------------- */
@@ -83,7 +83,7 @@ img {
   font-family: "Archia";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 10vw, 1.8rem);
   line-height: 140%;
 }
 
@@ -206,7 +206,7 @@ img {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  margin: 1.6rem 0;
+  margin: 0 0 1.6rem 0;
 }
 
 .button-filter {
@@ -256,6 +256,9 @@ button {
   border-width: 0 0 .5px;
   border-color: var(--main);
   margin: 1.6rem 0;
+  padding: .4rem;
+  text-indent: 1rem;
+  font-family: "Archia";
 }
 
 .form ::-webkit-input-placeholder {
@@ -276,5 +279,16 @@ button {
 .form ::placeholder {
   font-family: "Archia";
   font-size: 1.2rem;
+}
+
+.form textarea {
+  font-family: "Archia";
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+  background-color: var(--background);
+  border: 0.5px solid var(--main);
+  border-radius: .4rem;
 }
 /*# sourceMappingURL=variables.css.map */

@@ -8,13 +8,14 @@
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/main.css' />
   <title>Document</title>
-  {{!-- <script type="module" src="/javascripts/menu.js"></script> --}}
+  <script type="module" src='/javascripts/menu.js'></script>
+
   {{#each script}}
     <script type="module" src="/javascripts/{{this}}"></script>
   {{/each}}
-  {{!-- {{#each css}}
+  {{#each css}}
       <link rel='stylesheet' href='/stylesheets/{{this}}' />
-  {{/each}} --}}
+  {{/each}}
 </head>
 
 <body>
