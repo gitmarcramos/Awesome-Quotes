@@ -51,7 +51,7 @@ const quoteRouter = require("./routes/quotes.routes")
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
-app.use("/", filterRouter);
+app.use("/home", filterRouter);
 app.use("/quotes", quoteRouter)
 
 
