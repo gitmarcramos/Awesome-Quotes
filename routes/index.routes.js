@@ -12,7 +12,10 @@ router.get('/', function(req, res, next) {
 router.get('/home', async function(req, res, next) {
   try {
     const listQuotes = await quoteModel.find().sort({ dateCreatedAt: -1});
-    res.render('home', {listQuotes})
+    res.render('home', {
+      listQuotes, 
+      script: ["animation.js"]
+    })
   } catch (err) {
     console.error(err);
   }
