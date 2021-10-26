@@ -4,7 +4,7 @@ var router = express.Router();
 
 // GET users
 router.get("/", (req, res, next) => {
-  res.render('user')
+  res.render('users')
 })
 
 /* GET users/my-account */

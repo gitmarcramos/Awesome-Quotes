@@ -154,6 +154,7 @@ img {
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 100%;
+    color: var(--warning)
 }
 
 .social-links {
@@ -206,16 +207,15 @@ img {
 }
 
 .button--add_person {
+    display: inline-block;
     border: 1px solid var(--main);
-    padding: .4rem .8rem .4rem 2.4rem;
+    padding: .4rem .8rem;
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
     font-size: 1rem;
-    line-height: 140%;
     cursor: pointer;
     margin: 1.6rem 0;
-    max-width: 100px
 }
 
 
