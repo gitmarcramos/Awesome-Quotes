@@ -2,8 +2,13 @@
 @import url('/stylesheets/variables.css');
 @import url("/stylesheets/quote-card.css");
 @import url("/stylesheets/user-profil.css");
+@import url("/stylesheets/quote-create.css");
+@import url("/stylesheets/pages.css");
+
+
 
 /* -------------------------- // for all the pages! ------------------------- */
+
 .main {
     display: flex;
     flex-direction: column;
@@ -48,13 +53,14 @@
         align-items: center;
         height: 7rem;
         position: relative;
-
+        z-index: 9999;
 
         .burger {
             display: flex;
             gap: .4rem;
             flex-direction: column;
             cursor: pointer;
+            padding: 1.2rem 1.2rem 1.2rem 0;
 
             .burger__line {
                 width: 3rem;
@@ -80,12 +86,18 @@
     }
 
     .menu {
+        padding: 3.2rem clamp(1.6rem, 10vw, 1.8rem);
         background-color: var(--background);
         width: 100%;
-        height: 90vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        position: absolute;
+        top: 7rem;
+        left: -100%;
+        transition: transform 600ms ease-in-out;
+        z-index: 100;
+
 
         a {
             text-decoration: none;
@@ -97,8 +109,14 @@
             flex-direction: column;
             margin-bottom: 2.4rem;
         }
-
     }
+
+    .menu-reveal{
+        transform: translateX(100%);
+        transition: transform 600ms ease-in-out;
+    }
+
+
 }
 
 
@@ -106,3 +124,5 @@
     display: none !important;
 }
     
+
+

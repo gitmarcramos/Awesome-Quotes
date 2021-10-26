@@ -1,7 +1,7 @@
 <nav class="menu_container">
 
     <div class="menu_container__nav">
-        <div class="burger">
+        <div class="burger" id="menu_burger">
             <div class="burger__line burger__line--1"></div>
             <div class="burger__line burger__line--2"></div>
             <div class="burger__line burger__line--3"></div>
@@ -11,15 +11,19 @@
             <img src="/images/logo/awesome-quote-logo-inline.png" alt="Awesome Quotes logo">
         </a>
 
-        <svg class="nav_filter" width="22" height="20" viewBox="0 0 22 20" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 0.663147H1L9 10.1231V16.6631L13 18.6631V10.1231L21 0.663147Z" stroke="#444444"
-                stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+        <a href="/filter">
+            <svg class="nav_filter" width="22" height="20" viewBox="0 0 22 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 0.663147H1L9 10.1231V16.6631L13 18.6631V10.1231L21 0.663147Z" stroke="#444444"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </a>
+
     </div>
 
     <div class="line-separation"></div>
 
+<<<<<<< HEAD
     <div class="menu hidden">
 {{!-- <<<<<<< HEAD --}}
         <div class="menu__item menu__item--quote-related">
@@ -27,12 +31,17 @@
         <div class="menu__quote-related">
 {{!-- >>>>>>> Joey --}}
             <a href="/create-quote" class="body-bold">Publish an Awesome Quote</a>
+=======
+    <div class="menu" id="menu_page">
+        <div class="menu__item menu__item--quote-related">
+            <a href="/quotes/create-quote" class="body-bold">Publish an Awesome Quote</a>
+>>>>>>> 96c31de57ef0970674c6013b03f1218f40435028
             <a href="/home/best-quotes" class="body">Best quotes</a>
-            <a href="/home/bfilter" class="body">Filter</a>
+            <a href="/filter" class="body">Filter</a>
         </div>
 
         <div class="menu__item menu__item--account">
-            <a href="/:id/my-account" class="body-bold">My account</a>
+            <a href="/users/my-account" class="body-bold">My account</a>
         </div>
 
         <div class="menu__item menu__item--legal">

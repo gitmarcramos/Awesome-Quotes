@@ -14,7 +14,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 3.2rem 0;
+  margin: 3.2rem 0 0;
   max-width: 300px;
 }
 
@@ -42,6 +42,10 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.quote .quote_header .line-separation {
+  margin-top: 1.2rem;
 }
 
 .quote .quote-body {
@@ -91,5 +95,75 @@
       -ms-flex-align: center;
           align-items: center;
   gap: .8rem;
+}
+
+.quote .quote_social .quote_social__item .quote_social-icon {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quote .quote_social .quote_social__item svg {
+  stroke-width: 1.5px;
+  stroke: var(--main);
+  fill: var(--background);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: fill 600ms ease;
+  transition: fill 600ms ease;
+}
+
+.quote .quote_social .quote_social__item .quote_social-svg-icon {
+  background-color: #444;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1%;
+  height: 1%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.quote .quote_social .quote_social__item .svg-fill {
+  fill: #444;
+  -webkit-transition: fill 600ms ease;
+  transition: fill 600ms ease;
+}
+
+.quote .quote_social .quote_social__item .svg-animate {
+  -webkit-animation: pulse 300ms linear;
+          animation: pulse 300ms linear;
+  fill: #444;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+    width: 80px;
+    height: 80px;
+  }
 }
 /*# sourceMappingURL=quote-card.css.map */
