@@ -1,25 +1,26 @@
+{{#each users}}
 <div class="user_profil" id="user-page">
     <div class="user_main_infos">
         <img src="/images/icons/user-icon.png" alt="User icon" class="user-icon">
-        <span class="body-bold">My name</span>
-        <span class="suggestion-modal">My username</span>
+        <span class="body-bold">{{this.name}}</span>
+        <span class="suggestion-modal">{{this.username}}</span>
     </div>
 
     <div class="user_stats-container">
         <div class="user_stats user_stats--liked">
-            <span class="body-bold">1234</span>
+            <span class="body-bold">{{this.likes}}</span>
             <span class="suggestion-modal grey">Liked quotes</span>
         </div>
         <div class="user_stats user_stats--saved">
-            <span class="body-bold">875</span>
+            <span class="body-bold">{{this.favorites}}</span>
             <span class="suggestion-modal grey">Saved quotes</span>
         </div>
         <div class="user_stats user_stats--followers">
-            <span class="body-bold">456</span>
+            <span class="body-bold">{{this.followers}}</span>
             <span class="suggestion-modal grey">Followers</span>
         </div>
         <div class="user_stats user_stats--followers">
-            <span class="body-bold">12</span>
+            <span class="body-bold">{{this.following}}</span>
             <span class="suggestion-modal grey">Following</span>
         </div>
     </div>
@@ -28,6 +29,6 @@
         <p class="body-bold">About:</p>
         <p class="published-by grey">Lorem ipsum dolor sit amet</p>
     </div>
-
+{{/each}}
     <div class="line-separation"></div>
 </div>

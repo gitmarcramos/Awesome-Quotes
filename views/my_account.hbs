@@ -6,18 +6,20 @@
 
     {{>user_profil}}
 
+    {{#each user}}
     <div class="user_profil_infos_container">
         <div class="user_profil_infos_container-infos">
             <h3 class="body-bold">My infos</h3>
             <div class="user_profil_infos_container-infos--item">
                 <span class="social-links grey">Email</span>
-                <span class="published-by grey">john@doe@gmail.com</span>
+                <span class="published-by grey">{{this.email}}</span>
             </div>
             <div class="user_profil_infos_container-infos--item">
                 <span class="social-links grey">ID</span>
-                <span class="published-by grey">AHD56JDJM226DPMHF862HDTN</span>
+                <span class="published-by grey">{{this.id}}</span>
             </div>
-
+    {{/each}}
+    
             <a href="/user/edit" class="published-by-link grey">Edit my information</a>
         </div>
 

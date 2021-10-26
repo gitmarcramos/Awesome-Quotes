@@ -73,4 +73,21 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-module.exports = app;
+// controle the mail-----------
+// app.get('/auth/create-account', (req, res) => {
+//   let arr = [];
+//   mongoose.user.findIndex(item => {
+//     arr.push(item.mail);
+//   })
+//   if(arr.includes(req.query.mail)){
+//     res.status(400).send({
+//       message:"The email has already been registered!"
+//     })
+//     return;
+//   }
+//   res.status(200).send({
+//     message:"Congratulations, the email address can be used!"
+//   })
+// }
+
+module.exports = app ;
