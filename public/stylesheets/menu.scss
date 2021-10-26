@@ -64,7 +64,13 @@
 
         a {
             text-decoration: none;
-            margin-bottom: .8rem
+            margin-bottom: .8rem;
+            display: flex;
+
+            img {
+                width: 2.5rem;
+                margin-right: .4rem;
+            }
         }
 
         .menu__item {

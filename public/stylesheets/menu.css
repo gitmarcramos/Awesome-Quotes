@@ -86,6 +86,14 @@
 .menu_container .menu a {
   text-decoration: none;
   margin-bottom: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu_container .menu a img {
+  width: 2.5rem;
+  margin-right: .4rem;
 }
 
 .menu_container .menu .menu__item {
