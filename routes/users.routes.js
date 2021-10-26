@@ -6,5 +6,4 @@ router.get('/my-account', function(req, res, next){
   res.render('my_account');
 })
 
-
 module.exports = router;

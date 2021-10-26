@@ -8,7 +8,7 @@ const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 // DEBUG has to be removed
 
 router.get("/login", function (req, res, next) {
-  res.render("auth/login.hbs");
+  res.render("auth/login");
 });
 
 router.get("/create-account", function (req, res, next) {
