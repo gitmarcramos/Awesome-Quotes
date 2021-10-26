@@ -1,27 +1,14 @@
-.filterbody {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
-    flex-wrap: wrap;
-    margin-top: 11rem;
+#filter_page {
+  width: 100%;
 }
 
-.filterbtn {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 3.3rem;
-}
-.filtertype {
-    text-align: center;
-    border:1px solid;
-    margin:0.6rem;
-    padding: 1rem;
-    width: auto;
-    font-size: 1.6rem;
+#filter_page .subtitle {
+  margin-top: 1.8rem;
+  text-align: center;
+  width: 100%;
 }
 
-.subtitle {
-    margin-bottom: 4rem;
+#filter_page .filter_buttons-container {
+  margin-top: 3.2rem;
 }
-
+/*# sourceMappingURL=filter.css.map */

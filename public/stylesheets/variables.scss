@@ -59,8 +59,13 @@ a {
 }
 
 img {
-    width: 100px;
+    width: 8rem;
 }
+
+// p{
+//     word-break: break-all;
+//     hyphens: manual;
+// }
 
 
 /* ----------------------------- // DESIGN TAGS ----------------------------- */
@@ -94,7 +99,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 10vw, 1.8rem);
     line-height: 140%;
 }
 
@@ -190,7 +195,7 @@ img {
     line-height: 140%;
 }
 
-.grey{
+.grey {
     color: var(--grey);
 }
 
@@ -200,7 +205,7 @@ img {
     background-color: (var(--main));
     color: var(--background);
     cursor: pointer;
-    padding: .8rem 2.4rem;
+    padding: .8rem 1.8rem;
     font-family: "Chaney", Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -215,28 +220,69 @@ img {
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    margin: 1.6rem 0;
+    margin: 0 0 1.6rem 0;
 }
 
-
-.button-filter--unchecked{
-    background-color: var(--main);
-    color: var(--background);
-    cursor: pointer;
-    padding: .8rem 2.4rem;
-    font-weight: 400;
-    font-size: 1.6rem;
-    font-family: "Archia", Helvetica, sans-serif;
-    line-height: 100%;
-}
-
-.button-filter--checked{
-    color: var(--main);
-    border: 1px solid var(--main);
+.button-filter {
+    display: inline-block;
     cursor: pointer;
     padding: .8rem 1.2rem;
+    margin-bottom: .4rem;
     font-weight: 400;
     font-size: 1.6rem;
     font-family: "Archia", Helvetica, sans-serif;
     line-height: 100%;
+}
+
+.button-filter--checked {
+    background-color: var(--main);
+    color: var(--background);
+}
+
+.button-filter--unchecked {
+    color: var(--main);
+    border: 1px solid var(--main);
+}
+
+button {
+    border: none;
+}
+
+
+/* -------------------------------- // Input -------------------------------- */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+
+    .input {
+        width: 100%;
+        min-height: 2.4rem;
+        background-color: var(--background);
+        border-width: 0 0 .5px;
+        border-color: var(--main);
+        margin: 1.6rem 0;
+        padding: .4rem;
+        text-indent: 1rem;
+        font-family: "Archia";
+    }
+
+    ::placeholder {
+        font-family: "Archia";
+        font-size: 1.2rem;
+    }
+
+    textarea {
+        font-family: "Archia";
+        width: 100%;
+        box-sizing: border-box;
+        resize: none;
+        background-color: var(--background);
+        border: .5px solid var(--main);
+        border-radius: .4rem;
+    }
+
 }

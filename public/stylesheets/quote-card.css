@@ -57,7 +57,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2.4rem;
+  gap: 4.8rem;
+}
+
+.quote .quote-body .quote_atom {
+  max-width: 95%;
 }
 
 .quote .quote-body .quote_atom:nth-child(even) {
@@ -71,6 +75,7 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-left: auto;
 }
 
 .quote .quote_social {

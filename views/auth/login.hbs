@@ -1,22 +1,18 @@
-    {{>menu}}
+{{>menu_second}}
 
-<div class="main">
+<div class="main" id="login_page">
+    <h1 class="title">Log in</h1>
 
-<div class="loginbody">
-<h1 class="title">Log in</h1>
+    <form method="post" action="/auth/login" class="form">
 
-<form method="post" action="/auth/login" class="form">
-    <p class="body">
-    <input class="input" type="email" id="email" name="email" placeholder="Gmail">
-    <input class="input" type="password" id="password" name="password" placeholder="12345">
-    <button class="loginbtn">Let's go!</button>
-    </p>
-</form>
+        <input class="input" type="email" id="email" name="email" placeholder="Email">
+        <input class="input" type="password" id="password" name="password" placeholder="Enter password">
+
+        <button class="button--primary">Let's go!</button>
+    </form>
+
+    <div class="no_account_yet">
+        <span class="suggestion-modal"> Don't have an account yet? </span>
+        <a href="/auth/create-account" class="links"> Create an account</a>
+    </div>
 </div>
-
-<div class="title_foot">
-<span class="suggestion-modal"> Don't have an account yet? </span>
-<a href="/auth/create-account" class="links"> Create an account</a>
-</div>
-</div>
-

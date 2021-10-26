@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
 
 // GET home page
 router.get('/home', function(req, res, next) {
-  res.render('home')
+  res.render('home', {
+    script: ["animation.js"]
+  })
 })
 module.exports = router;

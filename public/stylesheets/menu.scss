@@ -1,0 +1,113 @@
+/* ----------------------------- //for the menu ----------------------------- */
+.menu_container {
+    padding: 0 clamp(1.6rem, 10vw, 1.8rem);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999999 !important;
+
+    //NAV
+    .menu_container__nav {
+        background-color: var(--background);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7rem;
+        position: relative;
+        z-index: 9999;
+
+        .burger {
+            display: flex;
+            gap: .4rem;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 1.2rem 1.2rem 1.2rem 0;
+
+            .burger__line {
+                width: 3rem;
+                height: 1px;
+                background-color: var(--main);
+            }
+        }
+
+
+        .nav-logo {
+            flex: 1;
+            max-width: 160px;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+
+        .nav_filter {
+            cursor: pointer;
+        }
+    }
+
+    .menu {
+        padding: 3.2rem clamp(1.6rem, 10vw, 1.8rem);
+        background-color: var(--background);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 7rem;
+        left: -100%;
+        transition: transform 600ms ease-in-out;
+        z-index: 1000;
+
+
+        a {
+            text-decoration: none;
+            margin-bottom: .8rem;
+            display: flex;
+
+            img {
+                width: 2.5rem;
+                margin-right: .4rem;
+            }
+        }
+
+        .menu__item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    .menu-reveal {
+        transform: translateX(100%);
+        transition: transform 600ms ease-in-out;
+    }
+}
+
+// Second menu
+
+.menu_container_second {
+    position: fixed;
+    z-index: 99999999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+
+    a {
+        margin: 0;
+        padding: 0;
+
+        img{
+            width: 16rem;
+        }
+    }
+
+
+}
