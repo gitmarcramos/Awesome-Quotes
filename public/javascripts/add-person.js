@@ -16,10 +16,7 @@ addPerson();
 addButton.addEventListener("click", () => {
   addPerson();
   addRemoveButton();
-  console.log("addPerson button clicked");
 });
-
-
 
 function addRemoveButton() {
   const removeBtn = addButton.cloneNode(true);
@@ -27,6 +24,6 @@ function addRemoveButton() {
   removeBtn.classList.add("remove-person");
   messagesContainer.appendChild(removeBtn);
   removeBtn.addEventListener("click", (e) => {
-    console.log(e.currentTarget.previousSibling.remove());
+    removeBtn.remove();
   });
 }
