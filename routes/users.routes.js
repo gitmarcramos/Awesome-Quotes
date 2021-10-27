@@ -8,10 +8,13 @@ router.get("/", (req, res, next) => {
 })
 
 /* GET users/my-account */
-router.get('/my-account', (req, res, next) => {
-  const user = userModel.findOne({name: 'Paul'})
-  .then((user) => res.render("my_account", user))
-  .catch(next);
+router.get('/my-account', async (req, res, next) => {
+  try{
+  const user = await userModel.findOne({name: 'Paul'})
+  res.render("my_account", user)
+}catch(err){
+  next(err)
+}
 })
 
 router.get("/:pseudo", async (req, res, next) => {
