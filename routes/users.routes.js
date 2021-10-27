@@ -1,4 +1,5 @@
 var express = require('express');
+const quoteModel = require('../models/Quotes.model');
 var router = express.Router();
 const userModel = require("./../models/Users.model");
 
@@ -17,13 +18,14 @@ router.get('/my-account', async (req, res, next) => {
 }
 })
 
-router.get("/:pseudo", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
-    const user = await userModel.findOne({ pseudo: req.params.pseudo });
-    console.log(user)
-    res.render('users', {user});
+    const user = await userModel.findById(req.params.id);
+    const listQuotes = await quoteModel.find({ publisher: req.params.id})
+    console.log(user , listQuotes)
+    res.render("users", {user , listQuotes})
   } catch {
-    res.redirect('/home');
+    next(error);
   }
 })
 
