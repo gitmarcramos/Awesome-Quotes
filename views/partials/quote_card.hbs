@@ -1,11 +1,11 @@
 <div class="main">
-
+    {{#each listQuotes}}
     <div class="quote">
         <div class="quote_header">
             <div class="quote_header__infos">
                 <div class="quote_header__infos--text">
-                    <span class="published-by">Published by:</span> <a href="/users" class="published-by-link">{{this.userName}}</span></a>
-                    <span class="publication-date">on {{this.date}}</span>
+                    <span class="published-by">Published by:</span> <a href="/users" class="published-by-link">{{this.publisher.name}}</span></a>
+                    <span class="publication-date">on {{this.dateCreatedAt}}</span>
                 </div>
 
 
@@ -16,30 +16,29 @@
                 </div>
             </div>
             <div class="quote_header__hashtags">
-                {{#each hashtag}}
-                <a href="#" class="hashtags">#{{this.hashtag}}</a>
-                {{/each}}
+            {{#each hashtags}}
+                <a href="#" class="hashtags">{{this}}</a>
+             {{/each}}
             </div>
             <div class="line-separation"></div>
         </div>
-
-
         <div class="quote-body">
-
-            <div class="quote_atom">
-                <h2 class="title">User name</h2>
-                <p class="body">Lorem ipsum dolor sit amet</p>
+         {{#each quotes}}   
+            <div class="quote_atom">               
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
+            </div>
+        {{/each}}
+            {{!-- <div class="quote_atom">
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
             </div>
             <div class="quote_atom">
-                <h2 class="title">User name</h2>
-                <p class="body">Lorem ipsum dolor sit amet property to break some lines!</p>
-            </div>
-            <div class="quote_atom">
-                <h2 class="title">User name</h2>
-                <p class="body">Lorem ipsum dolor sit amet</p>
-            </div>
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p> --}}
+            {{!-- </div> --}}
+            
         </div>
-
         <div class="quote_social">
 
             <div class="quote_social__item quote_social__item--like">
@@ -50,7 +49,7 @@
                     </svg>
                     <div class="quote_social-svg-icon"></div>
                 </div>
-                <span class="social-links">Like</span>
+                <span class="social-links">{{this.Like}}</span>
             </div>
 
             <div class="quote_social__item quote_social__item--like">
@@ -74,11 +73,12 @@
                     </svg>
                     <div class="quote_social-svg-icon icon-animate"></div>
                 </div>
-                <span class="social-links">Save</span>
+                <span class="social-links">{{this.favorites}}</span>
             </div>
 
         </div>
     </div>
-
+ {{/each}}
+    
 
 </div>
