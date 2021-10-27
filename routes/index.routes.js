@@ -12,11 +12,7 @@ router.get('/', function(req, res, next) {
 router.get('/home', async function(req, res, next) {
   try {
     const listQuotes = await quoteModel.find().sort({ dateCreatedAt: -1}).populate('publisher');
-    // console.log('=========')
-    // listQuotes.forEach(quotes => {
-    //   console.log(quotes)
-    // })
-    // console.log('==========')
+    console.log("======="+listQuotes+"========")
     res.render('home', {
       listQuotes, 
       script: ["animation.js"]

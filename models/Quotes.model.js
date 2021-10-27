@@ -9,11 +9,6 @@ const quoteSchema = new Schema({
   
   quoteDate: Date,
 
-  // dateCreatedAt: {
-  //   type: Date,
-  //   required: true
-  // },
-
   quotes: {
     type : [{
     user: {
@@ -37,12 +32,12 @@ const quoteSchema = new Schema({
 
   likes: {
     type: Number,
-    default: 0
+    default: "like"
   },
 
   favorites: {
     type: Number,
-    default: 0
+    default: "save"
   },
 
 });
