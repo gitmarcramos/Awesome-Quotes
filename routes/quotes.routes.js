@@ -5,8 +5,10 @@ const userModel = require("./../models/Users.model");
 
 // GET Create quote
 router.get("/create-quote", (req, res, next) => {
-    res.render("partials/quote_create");
-})
+  res.render("partials/quote_create", {
+    script: ["add-person.js"],
+  });
+});
 
 router.post("/create-quote", async (req, res, next) => {
   try {
@@ -23,7 +25,7 @@ router.post("/create-quote", async (req, res, next) => {
       publisher: userDebug[0]._id // to change to req.locals.currentUser._id
      };
     await quoteModel.create(newQuote);
-    res.redirect('/home');
+    res.redirect("/home");
   } catch (err) {
     console.error(err);
     res.redirect('/quotes/create-quote');

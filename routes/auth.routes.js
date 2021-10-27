@@ -7,22 +7,26 @@ const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 // router.use(protectAuthRoute);
 // DEBUG has to be removed
 
+
+// GET login page
 router.get("/login", function (req, res, next) {
   res.render("auth/login");
 });
 
-router.get("/create-account", function (req, res, next) {
-  res.render("auth/create-account");
-});
 
+// GET auth page
 router.get("/", function (req, res, next) {
   res.redirect("/auth/login");
 });
 
+
+// POST login page
 router.post("/login", async function (req, res, next) {
   const { mail, password } = req.body;
   const foundUser = await userModel.findOne({ mail: mail });
 
+
+  //! NEED TO CREATE FLASH MESSAGES 
   if (!foundUser) {
     req.flash("error", "Invalid credentials");
     res.redirect("/auth/login");
@@ -43,6 +47,15 @@ router.post("/login", async function (req, res, next) {
   }
 });
 
+
+
+//GET create-account page
+router.get("/create-account", function (req, res, next) {
+  res.render("auth/create-account");
+});
+
+
+// POST create-account page
 router.post("/create-account", async (req, res, next) => {
   try {
     const newUser = { ...req.body };
@@ -70,5 +83,10 @@ router.post("/create-account", async (req, res, next) => {
     res.redirect("/auth/create-account");
   }
 });
+
+
+
+
+
 
 module.exports = router;

@@ -6,7 +6,24 @@
         cursor: pointer;
     }
 
+    input,
+    textarea {
+        width: 100%;
+        min-height: 3.2rem;
+        background-color: var(--background);
+        border-width: .5px;
+        border-radius: .4rem;
+        border-color: var(--main);
+        margin-bottom: 1.6rem;
+        padding: 1rem;
+        font-family: "Archia";
+        font-size: 1.2rem;
+        overflow: hidden;
+    }
 
+    .ajax_input {
+        width: 100%;
+    }
 
     .ajax_form {
         display: flex;
@@ -15,35 +32,32 @@
         margin-top: 3.2rem;
         width: 100%;
 
-        .ajax_input{
-            width: 100%;
-        }
 
-        input,
-        textarea {
-            width: 100%;
-            min-height: 3.2rem;
-            background-color: var(--background);
-            border-width: .5px;
-            border-radius: .4rem;
-            border-color: var(--main);
-            margin-bottom: 1.6rem;
-            padding: 1rem;
-            font-family: "Archia";
-            font-size: 1.2rem;
-            overflow: hidden;
-        }
-       
-
-        .ajax-form-by-person {
+        .ajax_form_message_container {
             width: 100%;
             padding: 1.2rem;
             border: .5px solid var(--main);
         }
 
-        #ajax-input-hashtag-container {
-            margin-top: .8rem;
+        .appearMessage {
+            animation: messageAppear 300ms ease-in-out;
         }
+
+        @keyframes messageAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(0)
+            }
+        }
+    }
+
+    #ajax-input-hashtag-container {
+        margin-top: .8rem;
     }
 
     .button-container {
