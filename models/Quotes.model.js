@@ -37,12 +37,12 @@ const quoteSchema = new Schema({
 
   likes: {
     type: Number,
-    default: "like"
+    default: 0
   },
 
   favorites: {
     type: Number,
-    default: "save"
+    default: 0
   },
 
 });
