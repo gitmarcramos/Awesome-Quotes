@@ -59,12 +59,12 @@ const userSchema = new Schema({
   
   favorites: {
     type: [Schema.Types.ObjectId],
-    ref: "quotes"
+    ref: "quotes",
   },
   
   likes: {
     type: [Schema.Types.ObjectId],
-    ref: "quotes"
+    ref: "quotes",
   },
   
 });

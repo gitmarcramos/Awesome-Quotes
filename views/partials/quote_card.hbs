@@ -4,8 +4,8 @@
         <div class="quote_header">
             <div class="quote_header__infos">
                 <div class="quote_header__infos--text">
-                    <span class="published-by">Published by:</span> <a href="/users" class="published-by-link">{{this.publisher.name}}</span></a>
-                    <span class="publication-date">on {{this.dateCreatedAt}}</span>
+                    <span class="published-by">Published by:</span> <a href="/users/{{this.publisher._id}}" class="published-by-link">{{this.publisher.name}}</span></a>
+                    <span class="publication-date">on {{quoteDate}}</span>
                 </div>
 
 
@@ -29,14 +29,6 @@
                 <p class="body">{{this.text}}</p>
             </div>
         {{/each}}
-            {{!-- <div class="quote_atom">
-                <h2 class="title">{{this.user}}</h2>
-                <p class="body">{{this.text}}</p>
-            </div>
-            <div class="quote_atom">
-                <h2 class="title">{{this.user}}</h2>
-                <p class="body">{{this.text}}</p> --}}
-            {{!-- </div> --}}
             
         </div>
         <div class="quote_social">
@@ -49,7 +41,7 @@
                     </svg>
                     <div class="quote_social-svg-icon"></div>
                 </div>
-                <span class="social-links">{{this.Like}}</span>
+                <span class="social-links">{{this.likes}}</span>
             </div>
 
             <div class="quote_social__item quote_social__item--like">
