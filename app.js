@@ -9,7 +9,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const hbs = require("hbs");
-
+const flash = require("connect-flash");
 
 
 const app = express();
@@ -39,7 +39,10 @@ app.use(
   })
 );
 
+app.use(flash());
+
 app.use(require("./middlewares/exposeLoginStatus"));
+app.use(require("./middlewares/exposeFlashMessage"));
 
 const indexRouter = require("./routes/index.routes");
 const usersRouter = require("./routes/users.routes");

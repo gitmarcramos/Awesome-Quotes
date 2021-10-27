@@ -24,10 +24,12 @@ router.post("/login", async function (req, res, next) {
   const foundUser = await userModel.findOne({ mail: mail });
 
   if (!foundUser) {
+    req.flash("error", "Invalid credentials");
     res.redirect("/auth/login");
   } else {
     const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
+      req.flash("error", "Invalid credentials");
       res.redirect("/auth/login");
     } else {
       const userObject = foundUser.toObject(); // needed to convert mongoose object to classic js object
@@ -35,7 +37,7 @@ router.post("/login", async function (req, res, next) {
 
       req.session.currentUser = userObject;
       // above: Store the user in the session (data server side + a cookie is sent client side)
-
+      req.flash("success", "Successfully logged in...");
       res.redirect("/home");
     }
   }
@@ -48,7 +50,7 @@ router.post("/create-account", async (req, res, next) => {
 
     console.log(newUser);
     if (foundUser) {
-      console.error("account already exist")
+      req.flash("warning", "Email already registered");
       res.redirect("/auth/create-account");
     } else {
       const hashedPassword = bcrypt.hashSync(newUser.password, 10);
@@ -56,10 +58,15 @@ router.post("/create-account", async (req, res, next) => {
       newUser.creationDate = new Date(Date.now());
       console.log(newUser);
       await userModel.create(newUser);
+      req.flash("success", "Congrats ! You are now registered !");
       res.redirect("/auth/login");
     }
   } catch (err) {
-    console.error(err);
+    let errorMessage = "";
+    for (field in err.errors) {
+      errorMessage += err.errors[field].message + "\n";
+    }
+    req.flash("error", errorMessage);
     res.redirect("/auth/create-account");
   }
 });

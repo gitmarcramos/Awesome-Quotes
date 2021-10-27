@@ -30,6 +30,15 @@ router.post("/create-quote", async (req, res, next) => {
   }
 });
 
+router.get("/:id([a-z0-9]{24})", async (req, res, next) => {
+  try {
+    const quote = await quoteMode.findById(req.params.id);
+    res.render("partials/quote_card", {quote});
+  } catch {
+    res.redirect('/home');
+  }
+})
+
 router.post("/:id/like", async (req, res, next) => {
   try {
     const user = await userModel.findById(req.locals.currentUser._id);
