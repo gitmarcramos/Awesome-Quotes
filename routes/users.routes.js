@@ -16,6 +16,7 @@ router.get('/my-account', function(req, res, next){
 router.get("/:pseudo", async (req, res, next) => {
   try {
     const user = await userModel.findOne({ pseudo: req.params.pseudo });
+    console.log(user)
     res.render('users', {user});
   } catch {
     res.redirect('/home');

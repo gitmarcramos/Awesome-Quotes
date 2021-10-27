@@ -1,6 +1,5 @@
 <div class="main">
-{{#each listQuotes}}
-
+    {{#each listQuotes}}
     <div class="quote">
         <div class="quote_header">
             <div class="quote_header__infos">
@@ -16,31 +15,30 @@
                     <div class="kebab-dot"></div>
                 </div>
             </div>
-            {{#each hashtags}}
             <div class="quote_header__hashtags">
+            {{#each hashtags}}
                 <a href="#" class="hashtags">{{this}}</a>
+             {{/each}}
             </div>
             <div class="line-separation"></div>
         </div>
-            {{/each}}
         <div class="quote-body">
-
-            {{#each quotes}}
-            <div class="quote_atom">
+         {{#each quotes}}   
+            <div class="quote_atom">               
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
+            </div>
+        {{/each}}
+            {{!-- <div class="quote_atom">
                 <h2 class="title">{{this.user}}</h2>
                 <p class="body">{{this.text}}</p>
             </div>
             <div class="quote_atom">
                 <h2 class="title">{{this.user}}</h2>
-                <p class="body">{{this.text}}</p>
-            </div>
-            <div class="quote_atom">
-                <h2 class="title">{{this.user}}</h2>
-                <p class="body">{{this.text}}</p>
-            </div>
-            {{/each}}
+                <p class="body">{{this.text}}</p> --}}
+            {{!-- </div> --}}
+            
         </div>
-        
         <div class="quote_social">
 
             <div class="quote_social__item quote_social__item--like">
@@ -79,8 +77,8 @@
             </div>
 
         </div>
-        {{/each}}
     </div>
-
+ {{/each}}
+    
 
 </div>
