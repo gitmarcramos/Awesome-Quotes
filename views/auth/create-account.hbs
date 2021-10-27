@@ -1,26 +1,40 @@
-{{>menu}}
-<div class="accountbody">
+{{>menu_second}}
 
-<h1 class="subtitle">Create an account</h1>
-<img src="./../../public/images/icons/user-icon.png" alt="user-icon">
-<div class="accountform">
-<form method="post" action="/auth/create-account" class="form">
+<div class="main" id="create_account-page">
 
-    <input class="input" type="email" id="email" name="email" placeholder="email*">
-    <input class="input" type="password" id="password" name="password" placeholder="password*">
+    <h1 class="subtitle">Create an account</h1>
+    <div class="account-exists">
+        <span class="published-by">Already have an account?</span>
+        <a href="/auth/login" class="published-by-link grey ">Log in</a>
+    </div>
 
-    <input class="input" type="text" id="name" name="name" placeholder="What is your name?">
-    <input class="input" type="text" id="usename" name="usename" placeholder="What is your usename?*">
 
-    <input class="input" type="text" id="story" name="story" placeholder="story">
-    <button class="creat-account_btn">Create an account</button>
-</form>
-</div>
-</div>
+    <form method="post" action="/auth/create-account" class="form">
 
-<div class="accountfoot">
-<p>
-    Already got an account ? 
-</p>
-<a href="/auth/login">signin</a>
+        <a href="" id="imagePicker">
+            <img src="/images/icons/user-icon.png" alt="user-icon">
+        </a>
+        <label for="textImage"></label>
+        <input class="input" type="file" id="textImage" name="image">
+
+        <input class="input" type="email" id="email" name="email" placeholder="What is your email *" required>
+
+        <input class="input" type="password" id="password" name="password" placeholder="Choose a password *" required>
+
+        <input class="input" type="password" id="password" name="password" placeholder="Confirm password *" required>
+
+        <input class="input" type="text" id="name" name="name" placeholder="What is your name?">
+
+        <input class="input" type="text" id="usename" name="usename" placeholder="What is your usename? *" required>
+
+        <input class="input" type="text" id="story" name="description" placeholder="Tell us about you!">
+        {{!-- ==> textarea --}}
+        <span class="span-edit grey">* mandatory fields</span>
+
+        <button class="button--primary">Create my account</button>
+    </form>
+
+
+    {{!-- ==> already have an account ? Login! --}}
+
 </div>

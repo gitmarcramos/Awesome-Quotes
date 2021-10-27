@@ -1,0 +1,78 @@
+/* -------------------------------------------------------------------------- */
+/*                                //LOG IN PAGE                               */
+/* -------------------------------------------------------------------------- */
+#login_page {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login_page .button--primary {
+  margin-top: 3.2rem;
+}
+
+#login_page .no_account_yet {
+  margin-top: 10.4rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login_page .no_account_yet a {
+  margin-top: 1.2rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              // CREATE ACCOUNT                             */
+/* -------------------------------------------------------------------------- */
+#create_account-page {
+  padding-bottom: 7rem;
+}
+
+#create_account-page h1 {
+  margin: 1.8rem auto .4rem;
+  width: 100%;
+  text-align: center;
+}
+
+#create_account-page .account-exists {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.2rem;
+  color: var(--grey);
+}
+
+#create_account-page #imagePicker {
+  position: relative;
+}
+
+#create_account-page #textImage {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+#create_account-page .span-edit {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+#create_account-page .button--primary {
+  margin-top: 4.2rem;
+}
+/*# sourceMappingURL=auth.css.map */

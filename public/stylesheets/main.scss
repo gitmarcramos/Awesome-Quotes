@@ -4,6 +4,9 @@
 @import url("/stylesheets/user-profil.css");
 @import url("/stylesheets/quote-create.css");
 @import url("/stylesheets/pages.css");
+@import url("/stylesheets/auth.css");
+@import url("/stylesheets/filter.css");
+@import url("/stylesheets/menu.css");
 
 
 
@@ -27,6 +30,10 @@
     text-align: center;
     height: 100vh;
     text-decoration: none;
+
+    a{
+        text-decoration: none;
+    }
 }
 
 .index_container img {
@@ -34,90 +41,6 @@
     margin-bottom: 4.8rem
 }
 
-
-
-/* ----------------------------- //for the menu ----------------------------- */
-.menu_container {
-    padding: 0 clamp(1.6rem, 10vw, 1.8rem);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    //NAV
-    .menu_container__nav {
-        background-color: var(--background);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 7rem;
-        position: relative;
-        z-index: 9999;
-
-        .burger {
-            display: flex;
-            gap: .4rem;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 1.2rem 1.2rem 1.2rem 0;
-
-            .burger__line {
-                width: 3rem;
-                height: 1px;
-                background-color: var(--main);
-            }
-        }
-
-
-        .nav-logo {
-            flex: 1;
-            max-width: 160px;
-
-            img {
-                object-fit: contain;
-                width: 100%;
-            }
-        }
-
-        .nav_filter {
-            cursor: pointer;
-        }
-    }
-
-    .menu {
-        padding: 3.2rem clamp(1.6rem, 10vw, 1.8rem);
-        background-color: var(--background);
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 7rem;
-        left: -100%;
-        transition: transform 600ms ease-in-out;
-        z-index: 100;
-
-
-        a {
-            text-decoration: none;
-            margin-bottom: .8rem
-        }
-
-        .menu__item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 2.4rem;
-        }
-    }
-
-    .menu-reveal{
-        transform: translateX(100%);
-        transition: transform 600ms ease-in-out;
-    }
-
-
-}
 
 
 .hidden {

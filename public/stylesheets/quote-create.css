@@ -18,19 +18,37 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-top: 3.2rem;
+  width: 100%;
 }
 
 #quote-create .ajax_form .ajax_input {
   width: 100%;
-  margin-top: 3.2rem;
 }
 
-#quote-create .ajax_form .ajax_input input {
+#quote-create .ajax_form input,
+#quote-create .ajax_form textarea {
   width: 100%;
-  min-height: 2.4rem;
+  min-height: 3.2rem;
   background-color: var(--background);
-  border-width: 0 0 .5px;
+  border-width: .5px;
+  border-radius: .4rem;
   border-color: var(--main);
+  margin-bottom: 1.6rem;
+  padding: 1rem;
+  font-family: "Archia";
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+#quote-create .ajax_form .ajax-form-by-person {
+  width: 100%;
+  padding: 1.2rem;
+  border: 0.5px solid var(--main);
+}
+
+#quote-create .ajax_form #ajax-input-hashtag-container {
+  margin-top: .8rem;
 }
 
 #quote-create .button-container {
@@ -49,6 +67,6 @@
 }
 
 #quote-create .button-container .button--primary {
-  margin-top: 3.2rem;
+  margin: 3.2rem 0 7rem 0;
 }
 /*# sourceMappingURL=quote-create.css.map */

@@ -1,11 +1,12 @@
 <div class="main">
+{{#each listQuotes}}
 
     <div class="quote">
         <div class="quote_header">
             <div class="quote_header__infos">
                 <div class="quote_header__infos--text">
-                    <span class="published-by">Published by:</span> <a href="/users" class="published-by-link">{{this.name}}</span></a>
-                    <span class="publication-date">on {{this.date}}</span>
+                    <span class="published-by">Published by:</span> <a href="/users" class="published-by-link">{{this.publisher.name}}</span></a>
+                    <span class="publication-date">on {{this.dateCreatedAt}}</span>
                 </div>
 
 
@@ -15,37 +16,32 @@
                     <div class="kebab-dot"></div>
                 </div>
             </div>
+            {{#each hashtags}}
             <div class="quote_header__hashtags">
-                <a href="#" class="hashtags">#{{this.hashtags}}</a>
-                {{!-- <a href="#" class="hashtags">#Ironhack</a>
-                <a href="#" class="hashtags">#Dev</a>
-                <a href="#" class="hashtags">#LoremIpsum</a>
-                <a href="#" class="hashtags">#LoremIpsum</a>
-                <a href="#" class="hashtags">#LoremIpsum</a>
-                <a href="#" class="hashtags">#LoremIpsum</a>
-                <a href="#" class="hashtags">#LoremIpsum</a> --}}
+                <a href="#" class="hashtags">{{this}}</a>
             </div>
             <div class="line-separation"></div>
         </div>
-
-        {{#each quotes}}
+            {{/each}}
         <div class="quote-body">
-            <div class="quote_atom">
-                <h2 class="title">{{this.username}}</h2>
-                <p class="body">{{this.messages}}</p>
-            </div>
-            <div class="quote_atom">
-                <h2 class="title">{{this.username}}</h2>
-                <p class="body">{{this.messages}}</p>
-            </div>
-            <div class="quote_atom">
-                <h2 class="title">{{this.username}}</h2>
-                <p class="body">{{this.messages}}</p>
-            </div>
-        </div>
-        {{/each}}
-        <div class="quote_social">
 
+            {{#each quotes}}
+            <div class="quote_atom">
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
+            </div>
+            <div class="quote_atom">
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
+            </div>
+            <div class="quote_atom">
+                <h2 class="title">{{this.user}}</h2>
+                <p class="body">{{this.text}}</p>
+            </div>
+            {{/each}}
+        </div>
+        
+        <div class="quote_social">
 
             <div class="quote_social__item quote_social__item--like">
                 <div class="quote_social-icon quote_social-icon-animate">
@@ -55,7 +51,7 @@
                     </svg>
                     <div class="quote_social-svg-icon"></div>
                 </div>
-                <span class="social-links">Like</span>
+                <span class="social-links">{{this.Like}}</span>
             </div>
 
             <div class="quote_social__item quote_social__item--like">
@@ -79,9 +75,12 @@
                     </svg>
                     <div class="quote_social-svg-icon icon-animate"></div>
                 </div>
-                <span class="social-links">Save</span>
+                <span class="social-links">{{this.favorites}}</span>
             </div>
 
         </div>
+        {{/each}}
     </div>
 
+
+</div>

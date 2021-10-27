@@ -22,7 +22,9 @@ const quotes = [
     {
       user: "Marc",
       text: "Ou alors un tout petit chien..."
-    }]
+    }],
+
+    hashtags: ["Awesome", "chien", "Ironhack"]
 
   },
 
@@ -48,9 +50,13 @@ const quotes = [
     quotes[1].publisher = usersDb[0]._id;
     const inserted = await quoteModel.insertMany(quotes); // insert docs in db
     console.log(`seed quotes done : ${inserted.length} documents inserted !`);
-    await userModel.findOneAndUpdate(usersDb[0]._id, { $push: {
-      favorites: quotes[0]._id,
-      likes: quotes[0]._id
+
+    const quotesDb = await quoteModel.find();
+    await userModel.findOneAndUpdate({name: 'Paul'}, { $push: {
+      favorites: quotesDb[0]._id,
+      likes: {
+        $each: [quotesDb[0]._id, quotesDb[1]._id]
+      }
     }});
     console.log(`updated favorite like list`);
     process.exit();
