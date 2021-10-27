@@ -7,6 +7,7 @@ const messagesContainer = document.querySelector(
 );
 const template = document.querySelector(".template");
 
+
 function addPerson() {
   const message = document.importNode(template.content, true);
   messagesContainer.appendChild(message);
@@ -24,6 +25,7 @@ function addRemoveButton() {
   removeBtn.classList.add("remove-person");
   messagesContainer.appendChild(removeBtn);
   removeBtn.addEventListener("click", (e) => {
+    e.currentTarget.previousSibling.remove();
     removeBtn.remove();
   });
 }
