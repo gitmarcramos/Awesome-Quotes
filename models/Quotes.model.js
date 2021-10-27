@@ -14,19 +14,24 @@ const quoteSchema = new Schema({
     required: true
   },
 
-  quotes: [{
+  quotes: {
+    type : [{
     user: {
       type: String,
-      trim: true
+      trim: true,
+      required: true
     },
 
     text: {
       type: String,
-      trim: true
+      trim: true,
+      required: true
     }
   }],
+  validate: v => v.length > 0
+},
 
-  hastags: {
+  hashtags: {
     type: [String]
   },
 

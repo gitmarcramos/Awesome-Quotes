@@ -10,12 +10,23 @@ router.get("/create-quote", (req, res, next) => {
 
 router.post("/create-quote", async (req, res, next) => {
   try {
-    const newQuote = { ...req.body };
+    const userDebug = await userModel.find({name: 'Paul'});
+    const {user, text} = req.body;
+    const quotes = [];
+    for (let i = 0; i < user.length; i++) {
+      quotes.push({user: user[i], text: text[i]});
+    }
+    const newQuote = {
+      ...req.body,
+      dateCreatedAt: new Date(Date.now()),
+      quotes: quotes,
+      publisher: userDebug[0]._id // to change to req.locals.currentUser._id
+     };
     await quoteModel.create(newQuote);
     res.redirect('/home');
   } catch (err) {
     console.error(err);
-    res.redirect('/create-quote');
+    res.redirect('/quotes/create-quote');
   }
 });
 
