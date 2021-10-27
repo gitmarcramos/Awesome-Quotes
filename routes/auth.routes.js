@@ -26,7 +26,6 @@ router.post("/login", async function (req, res, next) {
   const foundUser = await userModel.findOne({ mail: mail });
 
 
-  //! NEED TO CREATE FLASH MESSAGES 
   if (!foundUser) {
     req.flash("error", "Invalid credentials");
     res.redirect("/auth/login");

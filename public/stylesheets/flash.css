@@ -3,8 +3,8 @@
 }
 
 .flash-msg.error {
-  color: #802b31;
-  background: #f8d6da;
+  /* color: #802b31;
+  background: #f8d6da; */
   box-shadow: -0.3px 0.1px 2.4px 0.1px #802b31;
 }
 

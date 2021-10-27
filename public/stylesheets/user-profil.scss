@@ -1,5 +1,6 @@
 .user_profil {
     width: 100%;
+    max-width: 100%;
     margin-top: 1.8rem;
     display: flex;
     flex-direction: column;
@@ -23,6 +24,7 @@
     .user_stats-container {
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         .user_stats {
