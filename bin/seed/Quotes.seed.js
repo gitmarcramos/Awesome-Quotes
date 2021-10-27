@@ -48,6 +48,9 @@ const quotes = [
     ]);
     quotes[0].publisher = usersDb[2]._id;
     quotes[1].publisher = usersDb[0]._id;
+    quotes[0].likes = 1;
+    quotes[1].likes = 1;
+    quotes[0].favorites = 1;
     const inserted = await quoteModel.insertMany(quotes); // insert docs in db
     console.log(`seed quotes done : ${inserted.length} documents inserted !`);
 
