@@ -7,36 +7,42 @@
         <form action="/quotes/create-quote" method="post" class="form">
 
             <div class="ajax_form form">
+                <div class="ajax_form_message_container">
 
-                <div class="ajax-form-by-person">
-                    <div class="ajax_input">
-                        <label class="body-bold" for="ajax-input-name">Name</label>
+                    <template class="template">
+                        <div class="ajax-form-by-person">
+                            <div class="ajax_input">
+                                <label class="body-bold" for="ajax-input-name">Name</label>
 
-                        <input id="ajax-input-name" type="text" name="publisher" required
-                            placeholder="Enter the name of the first person">
-                    </div>
-                    <div class="ajax_input">
-                        <label class="body" for="ajax-input-message">Message</label>
+                                <input id="ajax-input-name" type="text" name="publisher" required
+                                    placeholder="Enter the name of the person">
+                            </div>
+                            <div class="ajax_input">
+                                <label class="body" for="ajax-input-message">Message</label>
 
-                        <textarea name="message" id="ajax-input-message" cols="30" rows="5"
-                            placeholder="Enter here your message"></textarea>
-                    </div>
+                                <textarea name="message" id="ajax-input-message" cols="30" rows="5"
+                                    placeholder="Enter here your message"></textarea>
+                            </div>
+                    </template>
                 </div>
+            </div>
 
-                <div class="ajax_input" id="ajax-input-hashtag-container">
-                    <label class="hashtags" for="ajax-input-hashtag">Hashtags:</label>
+            <div class="ajax_input" id="ajax-input-hashtag-container">
+                <label class="hashtags" for="ajax-input-hashtag">Hashtags:</label>
 
-                    <input id="ajax-input-hashtag" type="text" name="hastags" placeholder="#">
-                </div>
+                <input id="ajax-input-hashtag input" type="text" name="hastags" placeholder="#">
             </div>
 
             <div class="button-container">
                 <div class="button--add_person">+ Add a person to the conversation</div>
                 <button class="button--primary">Publish</button>
             </div>
-
-        </form>
-
     </div>
+
+
+
+    </form>
+
+</div>
 
 </div>
