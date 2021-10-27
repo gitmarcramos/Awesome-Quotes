@@ -14,9 +14,15 @@ router.post("/create-quote", async (req, res, next) => {
   try {
     const userDebug = await userModel.find({name: 'Paul'});
     const {user, text} = req.body;
+    console.log(user, text);
     const quotes = [];
-    for (let i = 0; i < user.length; i++) {
-      quotes.push({user: user[i], text: text[i]});
+    console.log(typeof(user));
+    if (typeof(user) === 'string') {
+      quotes.push({user: user, text: text});
+    } else {
+      for (let i = 0; i < user.length; i++) {
+        quotes.push({user: user[i], text: text[i]});
+      }
     }
     const newQuote = {
       ...req.body,
@@ -24,6 +30,7 @@ router.post("/create-quote", async (req, res, next) => {
       quotes: quotes,
       publisher: userDebug[0]._id // to change to req.locals.currentUser._id
      };
+     console.log(quotes);
     await quoteModel.create(newQuote);
     res.redirect("/home");
   } catch (err) {

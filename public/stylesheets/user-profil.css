@@ -1,5 +1,6 @@
 .user_profil {
   width: 100%;
+  max-width: 100%;
   margin-top: 1.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,6 +42,8 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

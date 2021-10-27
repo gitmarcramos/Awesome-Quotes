@@ -9,6 +9,11 @@ const quoteSchema = new Schema({
   
   quoteDate: Date,
 
+  dateCreatedAt: {
+    type: Date,
+    required: true
+  },
+
   quotes: {
     type : [{
     user: {

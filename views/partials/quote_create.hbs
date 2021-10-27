@@ -3,34 +3,34 @@
 <div class="main">
     <div id="quote-create">
         <p class="instructions grey">How to create an Awesome Quote?</p>
+                    <template class="template">
+                        <div class="ajax-form-by-person">
+                            <div class="ajax_input">
+                                <label class="body-bold" for="ajax-input-name">Name</label>
+
+                                <input id="ajax-input-name" type="text" name="user" required
+                                    placeholder="Enter the name of the person">
+                            </div>
+                            <div class="ajax_input">
+                                <label class="body" for="ajax-input-message">Message</label>
+
+                                <textarea name="text" id="ajax-input-message" cols="30" rows="5"
+                                    placeholder="Enter here your message"></textarea>
+                            </div>
+                    </template>
 
         <form action="/quotes/create-quote" method="post" class="form">
 
             <div class="ajax_form form">
                 <div class="ajax_form_message_container">
 
-                    <template class="template">
-                        <div class="ajax-form-by-person">
-                            <div class="ajax_input">
-                                <label class="body-bold" for="ajax-input-name">Name</label>
-
-                                <input id="ajax-input-name" type="text" name="publisher" required
-                                    placeholder="Enter the name of the person">
-                            </div>
-                            <div class="ajax_input">
-                                <label class="body" for="ajax-input-message">Message</label>
-
-                                <textarea name="message" id="ajax-input-message" cols="30" rows="5"
-                                    placeholder="Enter here your message"></textarea>
-                            </div>
-                    </template>
                 </div>
             </div>
 
             <div class="ajax_input" id="ajax-input-hashtag-container">
                 <label class="hashtags" for="ajax-input-hashtag">Hashtags:</label>
 
-                <input id="ajax-input-hashtag input" type="text" name="hastags" placeholder="#">
+                <input id="ajax-input-hashtag input" type="text" name="hashtags" placeholder="#">
             </div>
 
             <div class="button-container">

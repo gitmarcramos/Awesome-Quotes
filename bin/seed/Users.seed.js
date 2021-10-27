@@ -6,7 +6,7 @@ const userModel = require("./../../models/Users.model"); // fetch the model to v
 const users = [
   {
     name: "Paul",
-    pseudo: "The John 841",
+    pseudo: "TheJohn841",
     mail: "jazz@mail.com",
     password: "123",
     creationDate: new Date('2021-10-22T10:02:31'),

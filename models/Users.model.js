@@ -64,7 +64,7 @@ const userSchema = new Schema({
   
   likes: {
     type: [Schema.Types.ObjectId],
-    ref: "quotes",
+    ref: "quotes"
   },
   
 });

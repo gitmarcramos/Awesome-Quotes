@@ -62,10 +62,6 @@ img {
     width: 8rem;
 }
 
-// p{
-//     word-break: break-all;
-//     hyphens: manual;
-// }
 
 
 /* ----------------------------- // DESIGN TAGS ----------------------------- */
@@ -78,19 +74,19 @@ img {
 
 .title {
     font-family: "Chaney", Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: clamp(2.2rem, 5vw, 2.2rem);
 }
 
 .subtitle {
     font-family: "Archia";
     font-weight: 700;
-    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 5vw, 2.8rem);
     line-height: 140%;
 }
 
 .body {
     font-weight: 400;
-    font-size: clamp(1.6rem, 10vw, 1.8rem);
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
     font-family: "Archia", Helvetica, sans-serif;
     line-height: 140%;
 }
@@ -99,14 +95,14 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(1.6rem, 10vw, 1.8rem);
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
     line-height: 140%;
 }
 
 .links {
     font-family: "Archia";
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 5vw, 1.6rem);
     line-height: 100%;
     text-decoration-line: underline;
 }
@@ -114,7 +110,7 @@ img {
 .hashtags {
     font-family: "Archia";
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 100%;
     text-decoration: none;
 }
@@ -123,7 +119,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 130%;
 }
 
@@ -131,7 +127,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 130%;
     text-decoration-line: underline;
 }
@@ -140,7 +136,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2clarem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 100%;
 }
 
@@ -148,7 +144,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 140%;
     text-decoration-line: underline;
 }
@@ -157,7 +153,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
     line-height: 100%;
     color: var(--warning)
 }
@@ -166,7 +162,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     line-height: 100%;
     text-transform: uppercase;
 }
@@ -175,7 +171,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     line-height: 140%;
 }
 
@@ -183,7 +179,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     line-height: 140%;
 }
 
@@ -191,7 +187,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     line-height: 140%;
 }
 
@@ -207,7 +203,7 @@ img {
     cursor: pointer;
     padding: .8rem 1.8rem;
     font-family: "Chaney", Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: clamp(2rem, 5vw, 2.2rem);
     text-align: center;
 }
 
@@ -218,7 +214,7 @@ img {
     font-family: "Archia";
     font-style: normal;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     cursor: pointer;
     margin: 0 0 1.6rem 0;
 }
@@ -229,7 +225,7 @@ img {
     padding: .8rem 1.2rem;
     margin-bottom: .4rem;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
     font-family: "Archia", Helvetica, sans-serif;
     line-height: 100%;
 }
@@ -242,6 +238,14 @@ img {
 .button-filter--unchecked {
     color: var(--main);
     border: 1px solid var(--main);
+}
+
+.remove-person{
+    color: var(--background);
+    border-radius: 100px;
+    background-color: var(--grey);
+    border: none;
+    padding: .4rem 2.4rem;
 }
 
 button {
@@ -260,7 +264,7 @@ button {
 
     .input {
         width: 100%;
-        min-height: 2.4rem;
+        min-height: 4.8rem;
         background-color: var(--background);
         border-width: 0 0 .5px;
         border-color: var(--main);
@@ -268,11 +272,12 @@ button {
         padding: .4rem;
         text-indent: 1rem;
         font-family: "Archia";
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
     }
 
     ::placeholder {
         font-family: "Archia";
-        font-size: 1.2rem;
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
     }
 
     textarea {
