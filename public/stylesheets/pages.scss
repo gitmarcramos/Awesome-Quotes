@@ -40,3 +40,29 @@
     }
 }
 
+#about_page{
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 3.2rem;
+    h1 {
+        width: 100%;
+        text-align: center;
+        margin: 3.2rem 0;
+    }
+
+    .body-bold{
+        margin-top: 2.4rem
+    }
+
+    ul{
+        padding-left: 3.2rem;
+    }
+
+    li{
+        margin-top: .8rem
+    }
+
+    .sincere{
+        margin-top: 3.2rem;
+    }
+}

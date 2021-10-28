@@ -38,4 +38,36 @@
 #user_page .user_quote_card .main {
   padding-top: 0;
 }
+
+#about_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-bottom: 3.2rem;
+}
+
+#about_page h1 {
+  width: 100%;
+  text-align: center;
+  margin: 3.2rem 0;
+}
+
+#about_page .body-bold {
+  margin-top: 2.4rem;
+}
+
+#about_page ul {
+  padding-left: 3.2rem;
+}
+
+#about_page li {
+  margin-top: .8rem;
+}
+
+#about_page .sincere {
+  margin-top: 3.2rem;
+}
 /*# sourceMappingURL=pages.css.map */

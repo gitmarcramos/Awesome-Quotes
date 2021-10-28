@@ -26,4 +26,12 @@ router.get('/filter', function(req, res, next){
   res.render('filter')
 })
 
+
+//GET About Page
+router.get('/about',  function(req, res, next){
+  res.render("about")
+})
+
+
+
 module.exports = router;
