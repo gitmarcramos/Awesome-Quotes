@@ -18,7 +18,7 @@ router.get('/home', async function(req, res, next) {
 
     res.render('home', {
       listQuotes, 
-      script: ["animation.js"],
+      script: ["animation.js", "format-date.js"],
       css: ["quote-card.css"]
     })
   } catch (err) {
@@ -27,7 +27,9 @@ router.get('/home', async function(req, res, next) {
 });
 
 router.get('/filter', function(req, res, next){
-  res.render('filter')
+  res.render('filter', {
+    script : ["format-date.js"]
+  })
 })
 
 

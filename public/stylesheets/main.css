@@ -69,8 +69,8 @@
   background-color: var(--main);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-animation: grow 1600ms ease-in;
-          animation: grow 1600ms ease-in;
+  -webkit-animation: grow 400ms ease-in;
+          animation: grow 400ms ease-in;
 }
 
 @-webkit-keyframes grow {
@@ -79,8 +79,8 @@
   }
   100% {
     opacity: 1;
-    width: 9999px;
-    height: 9999px;
+    width: 200%;
+    height: 200%;
   }
 }
 
@@ -90,8 +90,8 @@
   }
   100% {
     opacity: 1;
-    width: 9999px;
-    height: 9999px;
+    width: 200%;
+    height: 200%;
   }
 }
 /*# sourceMappingURL=main.css.map */

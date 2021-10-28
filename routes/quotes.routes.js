@@ -7,7 +7,7 @@ const protectUserRoute = require("./../middlewares/protectUserRoute");
 // GET Create quote
 router.get("/create-quote", (req, res, next) => {
   res.render("partials/quote_create", {
-    script: ["add-person.js"],
+    script: ["add-person.js", "format-date.js"],
     css: ["quote-create.css"],
   });
 });
@@ -50,6 +50,7 @@ router.get("/:id([a-z0-9]{24})", async (req, res, next) => {
     listQuotes.push(quote);
     res.render("home", {
       listQuotes,
+      script: ["format-date.js"],
       css: ["quote-card.css"],
     });
   } catch {
