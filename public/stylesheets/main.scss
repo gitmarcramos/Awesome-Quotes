@@ -61,7 +61,7 @@
     border-radius: 100%;
     background-color: var(--main);
     transform: translate(-50%, -50%);
-    animation: grow 1600ms ease-in;
+    animation: grow 400ms ease-in;
 }
 
 @keyframes grow {
@@ -69,8 +69,8 @@
         opacity: 1
     } 100% {
         opacity: 1;
-        width: 9999px;
-        height: 9999px;
+        width: 200%;
+        height: 200%;
     }
 }
 
