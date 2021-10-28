@@ -18,13 +18,13 @@ router.get('/my-account', async (req, res, next) => {
 }
 })
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:pseudo", async (req, res, next) => {
   try {
-    const user = await userModel.findById(req.params.id);
-    const listQuotes = await quoteModel.find({ publisher: req.params.id})
+    const user = await userModel.findById(req.params.pseudo)
+    const listQuotes = await quoteModel.find({publisher: user})
     res.render("users", {user , listQuotes})
-  } catch {
-    next(error);
+  } catch (err){
+    console.log(err)
   }
 })
 
