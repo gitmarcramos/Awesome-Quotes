@@ -53,7 +53,7 @@ const quoteRouter = require("./routes/quotes.routes")
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
-app.use("/home", filterRouter);
+app.use("/filter", filterRouter);
 app.use("/quotes", quoteRouter)
 
 

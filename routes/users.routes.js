@@ -22,7 +22,6 @@ router.get("/:id", async (req, res, next) => {
   try {
     const user = await userModel.findById(req.params.id);
     const listQuotes = await quoteModel.find({ publisher: req.params.id})
-    console.log(user , listQuotes)
     res.render("users", {user , listQuotes})
   } catch {
     next(error);
