@@ -28,7 +28,7 @@ const userSchema = new Schema({
 
   profilePic: {
     type: String,
-    default: '',
+    default: 'https://res.cloudinary.com/awesome-quotes/image/upload/v1635413379/samples/Awesome%20quotes/default_profile_image_e7mvln.png',
   },
 
   description: {
