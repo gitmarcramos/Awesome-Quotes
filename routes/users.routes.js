@@ -18,13 +18,13 @@ router.get('/my-account', async (req, res, next) => {
 }
 })
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:pseudo", async (req, res, next) => {
   try {
-    const user = await userModel.findById(req.params.id);
-    const listQuotes = await quoteModel.find({ publisher: req.params.id})
-    console.log(user , listQuotes)
-    res.render("users", {user , listQuotes})
-  } catch {
+    const user = await userModel.findOne({pseudo: { $regex : new RegExp(req.params.pseudo, "i") } });
+    const listQuotes = await quoteModel.find({ publisher: user._id}).sort({dateCreatedAt: -1}).populate('publisher');
+    console.log(user , listQuotes);
+    res.render("users", {user , listQuotes});
+  } catch (error) {
     next(error);
   }
 })
