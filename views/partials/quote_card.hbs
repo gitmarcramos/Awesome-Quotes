@@ -5,7 +5,7 @@
             <div class="quote_header__infos">
                 <div class="quote_header__infos--text">
                     <span class="published-by">Published by:</span> <a href="/users/{{this.publisher._id}}" class="published-by-link">{{this.publisher.name}}</span></a>
-                    <span class="publication-date">on {{quoteDate}}</span>
+                    <span class="publication-date">on {{dateCreatedAt}}</span>
                 </div>
 
 
@@ -17,7 +17,7 @@
             </div>
             <div class="quote_header__hashtags">
             {{#each hashtags}}
-                <a href="#" class="hashtags">{{this}}</a>
+                <a href="/filter/#{{this}}" class="hashtags">{{this}}</a>
              {{/each}}
             </div>
             <div class="line-separation"></div>
@@ -37,14 +37,22 @@
                 <div class="quote_social-icon quote_social-icon-animate">
                     <svg width="22" height="20" viewBox="0 0 22 20"  xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M19.5631 2.59133C19.0876 2.08683 18.523 1.68663 17.9016 1.41358C17.2802 1.14054 16.6142 1 15.9415 1C15.2689 1 14.6029 1.14054 13.9814 1.41358C13.36 1.68663 12.7955 2.08683 12.3199 2.59133L11.3331 3.63785L10.3462 2.59133C9.38572 1.57276 8.083 1.00053 6.72464 1.00053C5.36628 1.00053 4.06355 1.57276 3.10305 2.59133C2.14254 3.6099 1.60294 4.99139 1.60294 6.43187C1.60294 7.87235 2.14254 9.25383 3.10305 10.2724L4.08991 11.3189L11.3331 19L18.5763 11.3189L19.5631 10.2724C20.0389 9.76814 20.4162 9.16942 20.6737 8.51045C20.9312 7.85148 21.0637 7.14517 21.0637 6.43187C21.0637 5.71857 20.9312 5.01225 20.6737 4.35328C20.4162 3.69431 20.0389 3.09559 19.5631 2.59133V2.59133Z"/>
+                            d="M19.5631 2.59133C19.0876 2.08683 18.523 1.68663 17.9016 1.41358C17.2802 1.14054 16.6142 1 15.9415 1C15.2689 1 14.6029 1.14054 13.9814 1.41358C13.36 1.68663 12.7955 2.08683 12.3199 2.59133L11.3331 3.63785L10.3462 2.59133C9.38572 1.57276 8.083 1.00053 6.72464 1.00053C5.36628 1.00053 4.06355 1.57276 3.10305 2.59133C2.14254 3.6099 1.60294 4.99139 1.60294 6.43187C1.60294 7.87235 2.14254 9.25383 3.10305 10.2724L4.08991 11.3189L11.3331 19L18.5763 11.3189L19.5631 10.2724C20.0389 9.76814 20.4162 9.16942 20.6737 8.51045C20.9312 7.85148 21.0637 7.14517 21.0637 6.43187C21.0637 5.71857 20.9312 5.01225 20.6737 4.35328C20.4162 3.69431 20.0389 3.09559 19.5631 2.59133V2.59133Z"
+                            {{#if ../currentUser}}
+                            {{#isInArray this._id ../currentUser.likes}} class="svg-fill" {{/isInArray}}
+                            {{/if}}
+                            />
                     </svg>
-                    <div class="quote_social-svg-icon"></div>
+                    <div class="quote_social-svg-icon" 
+                    {{#if ../currentUser}}
+                    {{#isInArray this._id ../currentUser.likes}} class="svg-animate" {{/isInArray}}
+                    {{/if}}
+                    ></div>
                 </div>
                 <span class="social-links">{{this.likes}}</span>
             </div>
-
             <div class="quote_social__item quote_social__item--like">
+              <a href="/quotes/{{this._id}}">
                 <div class="quote_social-icon">
                 <svg width="16" height="20" viewBox="0 0 16 20" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -55,15 +63,23 @@
                     <div class="quote_social-svg-icon"></div>
                 </div>
                 <span class="social-links">Share</span>
+                </a>
             </div>
 
             <div class="quote_social__item quote_social__item--like">
                 <div class="quote_social-icon quote_social-icon-animate">
                     <svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M11 1L14.09 6.92429L21 7.88013L16 12.489L17.18 19L11 15.9243L4.82 19L6 12.489L1 7.88013L7.91 6.92429L11 1Z"/>
+                            d="M11 1L14.09 6.92429L21 7.88013L16 12.489L17.18 19L11 15.9243L4.82 19L6 12.489L1 7.88013L7.91 6.92429L11 1Z"
+                            {{#if ../currentUser}}
+                            {{#isInArray this._id ../currentUser.favorites}} class="svg-fill" {{/isInArray}}
+                            {{/if}}/>
                     </svg>
-                    <div class="quote_social-svg-icon icon-animate"></div>
+                    <div class="quote_social-svg-icon icon-animate"
+                    {{#if ../currentUser}}
+                    {{#isInArray this._id ../currentUser.favorites}} class="svg-animate" {{/isInArray}}
+                    {{/if}}
+                    ></div>
                 </div>
                 <span class="social-links">{{this.favorites}}</span>
             </div>
