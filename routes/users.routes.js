@@ -13,7 +13,7 @@ router.get("/my-account", async (req, res, next) => {
   try {
     const user = await userModel.findOne({ name: "Paul" });
     console.log(user);
-    res.render("my_account", user);
+    res.render("my_account", {user});
   } catch (err) {
     next(err);
   }
@@ -50,9 +50,6 @@ router.post("/:pseudo/edit", async (req, res, next) => {
       req.body,
       {new: true}
     );
-
-    console.log(updateUser);
-
     res.redirect('/users/my-account')
   } catch (err) {
     console.log(err, "There was an error updating your account");
