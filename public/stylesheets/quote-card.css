@@ -32,7 +32,7 @@
 }
 
 .quote .quote_header .quote_header__infos .publication-date {
-  display: inline-block;
+  display: block;
   margin-top: .8rem;
 }
 
