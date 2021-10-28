@@ -53,6 +53,7 @@ body {
 a {
   color: var(--main);
   padding: .4rem .4rem .4rem 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
