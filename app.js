@@ -19,6 +19,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static("public"));
 hbs.registerPartials(__dirname + "/views/partials");
+require("./helpers/hbs.js");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -53,7 +54,7 @@ const quoteRouter = require("./routes/quotes.routes")
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
-app.use("/home", filterRouter);
+app.use("/filter", filterRouter);
 app.use("/quotes", quoteRouter)
 
 

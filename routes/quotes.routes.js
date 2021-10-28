@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const quoteModel = require("./../models/Quotes.model");
 const userModel = require("./../models/Users.model");
+const protectUserRoute = require("./../middlewares/protectUserRoute");
+
 
 // GET Create quote
 router.get("/create-quote", (req, res, next) => {
@@ -41,14 +43,16 @@ router.post("/create-quote", async (req, res, next) => {
 
 router.get("/:id([a-z0-9]{24})", async (req, res, next) => {
   try {
-    const quote = await quoteMode.findById(req.params.id);
-    res.render("partials/quote_card", {quote});
+    const quote = await quoteModel.findById(req.params.id).populate('publisher');
+    const listQuotes = [];
+    listQuotes.push(quote);
+    res.render("home", {listQuotes});
   } catch {
     res.redirect('/home');
   }
 })
 
-router.post("/:id/like", async (req, res, next) => {
+router.post("/:id/like", protectUserRoute, async (req, res, next) => {
   try {
     const user = await userModel.findById(req.locals.currentUser._id);
     const quote = await quoteModel.findById(req.params.id);
@@ -59,6 +63,25 @@ router.post("/:id/like", async (req, res, next) => {
     } else {
       user.likes.push(quote._id);
       quote.likes++;
+    }
+    await userModel.findByIdAndUpdate(req.locals.currentUser._id, user);
+    await quoteModel.findByIdAndUpdate(req.params.id, quote);
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+router.post("/:id/favorite", protectUserRoute, async (req, res, next) => {
+  try {
+    const user = await userModel.findById(req.locals.currentUser._id);
+    const quote = await quoteModel.findById(req.params.id);
+    let index = user.favorites.indexOf(quote._id);
+    if (index > -1) {
+      user.favorites.splice(index, 1);
+      quote.favorites--;
+    } else {
+      user.favorites.push(quote._id);
+      quote.favorites++;
     }
     await userModel.findByIdAndUpdate(req.locals.currentUser._id, user);
     await quoteModel.findByIdAndUpdate(req.params.id, quote);
