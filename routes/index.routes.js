@@ -15,7 +15,8 @@ router.get('/home', async function(req, res, next) {
     const listQuotes = await quoteModel.find().sort({ dateCreatedAt: -1}).populate('publisher');
     res.render('home', {
       listQuotes, 
-      script: ["animation.js"]
+      script: ["animation.js"],
+      css: ["quote-card.css"]
     })
   } catch (err) {
     console.error(err);
