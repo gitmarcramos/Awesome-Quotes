@@ -40,8 +40,17 @@
             <a href="/privacy-policy" class="body">Privacy policy</a>
         </div>
 
+        {{#if currentUser}}
         <div class="menu__item menu__item--log-out">
-            <a href="/home" class="suggestion-modal">Logout</a>
+            <a href="/auth/logout" class="suggestion-modal">Logout</a>
         </div>
+        {{else}}
+        <div class="menu__item menu__item--log-in">
+            <a href="/auth/login" class="suggestion-modal">Login</a>
+        </div>
+        <div class="menu__item menu__item--create-account">
+            <a href="/auth/create-account" class="suggestion-modal">Create an Account</a>
+        </div>
+        {{/if}}
     </div>
 </nav>
