@@ -15,6 +15,5 @@ icons.forEach((icon) => {
   icon.addEventListener("click", (e) => {
     iconAnimate(e.currentTarget.querySelector('.quote_social-svg-icon'));
     svgFill(e.target);
-    console.log(e.currentTarget)
   });
 });

@@ -42,6 +42,12 @@
 body {
   color: var(--main);
   background-color: var(--background);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 a {
@@ -299,5 +305,7 @@ button {
   background-color: var(--background);
   border: 0.5px solid var(--main);
   border-radius: .4rem;
+  padding: .4rem;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
 }
 /*# sourceMappingURL=variables.css.map */

@@ -1,5 +1,8 @@
 #index_page{
     padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 #home-page{
@@ -14,6 +17,17 @@
         display: inline-block;
         text-align: center;
         margin-top: 1.8rem;
+    }
+}
+
+#update_account-page{
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+
+    button {
+        margin: 3.2rem 0;
     }
 }
 

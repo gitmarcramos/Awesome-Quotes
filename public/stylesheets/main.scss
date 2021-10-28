@@ -14,10 +14,13 @@
 /* -------------------------- // for all the pages! ------------------------- */
 
 .main {
+    width: 100%;
+    min-width: 320px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 7rem clamp(1.6rem, 10vw, 1.8rem) 0;
 }
 
