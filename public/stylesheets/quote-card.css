@@ -32,8 +32,12 @@
 }
 
 .quote .quote_header .quote_header__infos .publication-date {
-  display: block;
+  display: inline-block;
   margin-top: .8rem;
+}
+
+.quote .quote_header .quote_header__infos #quote-date {
+  display: inline;
 }
 
 .quote .quote_header .quote_header__hashtags {

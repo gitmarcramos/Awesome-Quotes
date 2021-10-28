@@ -18,8 +18,12 @@
             display: flex;
 
             .publication-date {
-                display: block;
+                display: inline-block;
                 margin-top: .8rem;
+            }
+
+            #quote-date{
+                display: inline;
             }
         }
 
