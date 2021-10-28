@@ -1,12 +1,15 @@
-
-const animate = document.createElement('div');
-animate.style.width = "100px";
-animate.style.height = "100px";
-animate.backgroundColor = "Yellow"
-const body = document.querySelector('body');
+const body = document.querySelector("body");
+const animate = document.createElement("div");
 body.appendChild(animate);
 
+function expandDiv() {
+  body.style.overflow = "hidden";
+  animate.classList.add("expand");
+  setTimeout(() => {
+    window.location.href = "/home";
+  }, 300);
+}
 
-// setTimeout(() =>{
-//     window.location.href = "/home";
-// },1200)
+setTimeout(() =>{
+    expandDiv();
+}, 1600)

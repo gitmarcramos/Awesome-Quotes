@@ -58,4 +58,40 @@
 .hidden {
   display: none !important;
 }
+
+.expand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+  background-color: var(--main);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: grow 1600ms ease-in;
+          animation: grow 1600ms ease-in;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 9999px;
+    height: 9999px;
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 9999px;
+    height: 9999px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
