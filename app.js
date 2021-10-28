@@ -19,6 +19,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static("public"));
 hbs.registerPartials(__dirname + "/views/partials");
+require("./helpers/hbs.js");
 
 app.use(logger("dev"));
 app.use(express.json());
