@@ -34,4 +34,13 @@ router.get('/most-saved', async function(req, res, next){
   }
 });
 
+router.get('/tag/:hashtag', async function(req, res, next){
+  try {
+    const listQuotes = await quoteModel.find({hashtags: req.params.hashtag}).sort({ dateCreatedAt: -1});
+    res.render('home', {listQuotes})
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 module.exports = router;

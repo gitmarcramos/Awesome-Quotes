@@ -13,6 +13,12 @@ router.get("/login", function (req, res, next) {
   res.render("auth/login");
 });
 
+// GET logout
+router.get("/logout", async (req, res, next) => {
+  req.session.destroy(function (err) {
+    res.redirect("/auth/login");
+  });
+});
 
 // GET auth page
 router.get("/", function (req, res, next) {
