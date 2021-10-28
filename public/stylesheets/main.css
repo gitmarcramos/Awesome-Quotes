@@ -23,6 +23,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 7rem clamp(1.6rem, 10vw, 1.8rem) 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* -------------------------- //for the index page -------------------------- */
@@ -47,6 +48,7 @@
 
 .index_container a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .index_container img {

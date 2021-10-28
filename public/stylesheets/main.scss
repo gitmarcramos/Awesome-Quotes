@@ -22,6 +22,8 @@
     justify-content: center;
     align-items: center;
     padding: 7rem clamp(1.6rem, 10vw, 1.8rem) 0;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 
@@ -35,8 +37,10 @@
     height: 100vh;
     text-decoration: none;
 
-    a{
+    a {
         text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+
     }
 }
 
@@ -50,9 +54,9 @@
 .hidden {
     display: none !important;
 }
-    
 
-.expand{
+
+.expand {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -65,12 +69,13 @@
 }
 
 @keyframes grow {
-    0%{
+    0% {
         opacity: 1
-    } 100% {
+    }
+
+    100% {
         opacity: 1;
         width: 200%;
         height: 200%;
     }
 }
-
