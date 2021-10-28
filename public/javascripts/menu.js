@@ -1,3 +1,5 @@
+// import { format, render, cancel, register } from '../../timeago.js';
+
 const burger = document.querySelector("#menu_burger");
 const menu = document.querySelector("#menu_page");
 
