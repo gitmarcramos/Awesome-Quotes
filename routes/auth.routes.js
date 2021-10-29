@@ -63,7 +63,7 @@ router.get("/create-account", function (req, res, next) {
 
 
 // POST create-account page
-router.post("/create-account",fileUploader.single('image'), async (req, res, next) => {
+router.post("/create-account", protectAuthRoute, fileUploader.single('profilePic'), async (req, res, next) => {
   try {
     const newUser = { ...req.body };
 

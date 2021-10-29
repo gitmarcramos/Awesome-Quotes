@@ -12,8 +12,8 @@
         </a>
 
         {{#if isLoggedIn}}
-        <a href="/users/my-account">
-            <img src="{{currentUser.profilPic}}"
+        <a href="/users/{{currentUser.pseudo}}">
+            <img src="{{currentUser.profilePic}}"
                 alt="User profil picture" class="profil-pic">
         </a>
         {{else}}

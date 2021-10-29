@@ -2,6 +2,7 @@ var express = require("express");
 const quoteModel = require("../models/Quotes.model");
 var router = express.Router();
 const userModel = require("./../models/Users.model");
+const fileUploader = require("./../config/cloudinary");
 
 // GET users
 router.get("/", (req, res, next) => {
@@ -13,10 +14,10 @@ router.get("/", (req, res, next) => {
 /* GET users/my-account */
 router.get("/my-account", async (req, res, next) => {
   try {
-    const user = await userModel.findOne({ name: "Paul" });
-    console.log(user);
+    // const user = await userModel.findOne();
+    // console.log(user);
     res.render("my_account", {
-      user,
+      user: res.locals.currentUser,
       css: ["user-profil.css", "quote-card.css"],
     });
   } catch (err) {
@@ -34,7 +35,7 @@ router.get("/:pseudo", async (req, res, next) => {
       .sort({ dateCreatedAt: -1 })
       .populate("publisher");
     console.log(user, listQuotes);
-    res.render("users", {
+    res.render("my_account", {
       user,
       listQuotes,
       css: ["user-profil.css", "quote-card.css"],
@@ -60,17 +61,26 @@ router.get("/:pseudo/edit", async (req, res, next) => {
 });
 
 // POST update USER INFOS route
-router.post("/:pseudo/edit", async (req, res, next) => {
-  try {
-    const updateUser = await userModel.findOneAndUpdate(
-      req.params.pseudo,
-      req.body,
-      { new: true }
-    );
-    res.redirect("/users/my-account");
-  } catch (err) {
-    console.log(err, "There was an error updating your account");
+router.post(
+  "/:pseudo/edit",
+  fileUploader.single("profilePic"),
+  async (req, res, next) => {
+    try {
+      // check if profil pic is uploaded by user
+      if (req.file) {
+        req.body.profilePic = req.file.path;
+      }
+
+      const updateUser = await userModel.findOneAndUpdate(
+        req.params.pseudo,
+        req.body,
+        { new: true }
+      );
+      res.redirect("/users/"+req.params.pseudo);
+    } catch (err) {
+      console.log(err, "There was an error updating your account");
+    }
   }
-});
+);
 
 module.exports = router;

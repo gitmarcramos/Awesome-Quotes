@@ -53,11 +53,13 @@ const filterRouter = require("./routes/filter.routes");
 const quoteRouter = require("./routes/quotes.routes")
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/filter", filterRouter);
 app.use("/quotes", quoteRouter)
 
+// need to be loged in to check the users account
+app.use(require('./middlewares/protectUserRoute'));
+app.use("/users", usersRouter);
 
 
 // SESSION SETUP
