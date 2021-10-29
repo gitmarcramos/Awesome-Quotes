@@ -1,10 +1,12 @@
 <div class="user_profil" id="user-page">
     <div class="user_main_infos">
-        <img src="/images/icons/user-icon.png" alt="User icon" class="user-icon">
+
+
+        <img src="{{profilePic}}" alt="User icon" class="user-icon">
         <span class="body-bold">{{name}}</span>
         <span class="suggestion-modal">{{pseudo}}</span>
     </div>
-    
+
     <div class="user_stats-container">
         <div class="user_stats user_stats--liked">
             <span class="body-bold">{{likes.length}}</span>
@@ -26,10 +28,10 @@
     </div>
 
     <div class="user_about">
-      {{#if description}}
+        {{#if description}}
         <p class="body-bold">About:</p>
         <p class="published-by grey">{{description}}</p>
-      {{/if}}
+        {{/if}}
     </div>
     <div class="line-separation"></div>
 </div>

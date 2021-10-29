@@ -59,6 +59,7 @@
 
 .menu_container .menu_container__nav .profil-pic {
   max-width: 25px;
+  border-radius: 50%;
 }
 
 .menu_container .menu {
