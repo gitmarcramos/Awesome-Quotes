@@ -72,8 +72,8 @@ router.post("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
 
 router.get("/:pseudo/delete", protectUserRoute, async (req, res, next) => {
   try {
-    await userModel.findOneAndDelete({ pseudo: req.params.pseudo });
-    res.redirect("/auth/login");
+    await userModel.findOneAndDelete({ _id: req.session.currentUser._id });
+    res.redirect("/auth/logout");
   } catch (err) {
     console.log(err, "There was an error finding the user to delete");
   }
