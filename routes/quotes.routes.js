@@ -12,6 +12,21 @@ router.get("/create-quote", protectUserRoute, (req, res, next) => {
   });
 });
 
+router.get("/delete/:id", async (req, res, next) => {
+  try {
+       const quotes =  await quoteModel.find({publisher_id: req.session.currentUser._id})
+       quotes.forEach( async (quote) => {
+         if (quote._id.toString() === req.params.id && quote.publisher.toString() === req.session.currentUser._id.toString()) {
+           await quoteModel.findByIdAndDelete(req.params.id);
+         }
+       })
+    res.redirect('/home')
+    
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post("/create-quote", protectUserRoute, async (req, res, next) => {
   try {
     const userDebug = await userModel.find({ name: "Paul" });

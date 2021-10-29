@@ -34,7 +34,7 @@ router.get("/:pseudo", async (req, res, next) => {
       .sort({ dateCreatedAt: -1 })
       .populate("publisher");
     console.log(user, listQuotes);
-    res.render("users", {
+    res.render("my_account", {
       user,
       listQuotes,
       css: ["user-profil.css", "quote-card.css"],

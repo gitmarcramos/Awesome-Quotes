@@ -181,4 +181,18 @@
     height: 80px;
   }
 }
+
+#Xdelete {
+  text-decoration: none;
+  font-size: 2rem ;
+  position: absolute;
+  top: -1.7rem;
+  right: -13.7rem;
+  font-weight: bold;
+}
+
+.quote_header__infos--kebab {
+  position: relative;
+}
+
 /*# sourceMappingURL=quote-card.css.map */
