@@ -81,6 +81,11 @@
       -ms-flex-align: end;
           align-items: flex-end;
   margin-left: auto;
+  max-width: 80%;
+}
+
+.quote .quote-body .quote_atom:nth-child(even) p {
+  display: inline;
 }
 
 .quote .quote_social {

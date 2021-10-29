@@ -22,7 +22,7 @@
                 margin-top: .8rem;
             }
 
-            #quote-date{
+            #quote-date {
                 display: inline;
             }
         }
@@ -44,7 +44,7 @@
         flex-direction: column;
         gap: 4.8rem;
 
-        .quote_atom{
+        .quote_atom {
             max-width: 95%;
         }
 
@@ -53,6 +53,11 @@
             flex-direction: column;
             align-items: flex-end;
             margin-left: auto;
+            max-width: 80%;
+
+            p {
+                display: inline;
+            }
         }
     }
 
@@ -89,7 +94,7 @@
                 height: 100%;
                 transition: fill 600ms ease;
             }
-    
+
             .quote_social-svg-icon {
                 background-color: #444;
                 position: absolute;
@@ -101,23 +106,24 @@
                 border-radius: 50%;
                 z-index: -1;
             }
-            
-            
+
+
             .svg-fill {
                 fill: #444;
                 transition: fill 600ms ease;
             }
-            
+
             .svg-animate {
                 animation: pulse 300ms linear;
                 fill: #444
             }
-            
+
             @keyframes pulse {
                 0% {
                     opacity: .9;
                 }
-                100%{
+
+                100% {
                     opacity: 0;
                     width: 80px;
                     height: 80px;
