@@ -11,9 +11,9 @@
             <img src="/images/logo/awesome-quote-logo-inline.png" alt="Awesome Quotes logo">
         </a>
 
-        {{#if isLoggedIn}}
-        <a href="/users/my-account">
-            <img src="{{currentUser.profilPic}}"
+        {{#if currentUser}}
+        <a href="/users/{{currentUser.pseudo}}">
+            <img src="{{currentUser.profilePic}}"
                 alt="User profil picture" class="profil-pic">
         </a>
         {{else}}
@@ -44,7 +44,7 @@
         </div>
 
         <div class="menu__item menu__item--account">
-            <a href="/auth/login" class="body-bold"><img src="/images/icons/menu-account-icon.png" alt=""> My
+            <a href="/users/my-account" class="body-bold"><img src="/images/icons/menu-account-icon.png" alt=""> My
                 account</a>
         </div>
 

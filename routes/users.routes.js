@@ -2,6 +2,7 @@ var express = require("express");
 const quoteModel = require("../models/Quotes.model");
 var router = express.Router();
 const userModel = require("./../models/Users.model");
+const protectUserRoute = require("./../middlewares/protectUserRoute");
 
 // GET users
 router.get("/", (req, res, next) => {
@@ -11,10 +12,10 @@ router.get("/", (req, res, next) => {
 });
 
 /* GET users/my-account */
-router.get("/my-account", async (req, res, next) => {
+router.get("/my-account", protectUserRoute, async (req, res, next) => {
   try {
-    const user = await userModel.findOne({ name: "Paul" });
-    console.log(user);
+    const user = await userModel.findOne({pseudo: req.session.pseudo});
+    console.log(req.session.pseudo, user);
     res.render("my_account", {
       user,
       css: ["user-profil.css", "quote-card.css"],
@@ -45,7 +46,7 @@ router.get("/:pseudo", async (req, res, next) => {
 });
 
 //GET update USER INFOS route
-router.get("/:pseudo/edit", async (req, res, next) => {
+router.get("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
   try {
     const foundUser = await userModel.findOne({ pseudo: req.params.pseudo });
 
@@ -60,7 +61,7 @@ router.get("/:pseudo/edit", async (req, res, next) => {
 });
 
 // POST update USER INFOS route
-router.post("/:pseudo/edit", async (req, res, next) => {
+router.post("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
   try {
     const updateUser = await userModel.findOneAndUpdate(
       req.params.pseudo,
