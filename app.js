@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/mongodb");
+require("./config/cloudinary");
 const createError = require("http-errors");
 const express = require("express");
 const mongoose = require("mongoose");

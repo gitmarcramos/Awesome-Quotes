@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const userModel = require("./../models/Users.model");
 const protectAuthRoute = require("./../middlewares/protectAuthRoute");
+const fileUploader = require('./../config/cloudinary');
+
 
 
 // GET login page
@@ -50,7 +52,6 @@ router.post("/login", protectAuthRoute, async function (req, res, next) {
 });
 
 
-
 //GET create-account page
 router.get("/create-account", protectAuthRoute, function (req, res, next) {
   res.render("auth/create-account");
@@ -58,9 +59,15 @@ router.get("/create-account", protectAuthRoute, function (req, res, next) {
 
 
 // POST create-account page
-router.post("/create-account", protectAuthRoute, async (req, res, next) => {
+router.post("/create-account", protectAuthRoute, fileUploader.single('image'), async (req, res, next) => {
   try {
     const newUser = { ...req.body };
+
+    // check if profil pic is uploaded by user
+    if(req.file){
+      newUser.profilePic = req.file.path
+    }
+
     const foundUser = await userModel.findOne({ mail: newUser.mail });
 
     console.log(newUser);

@@ -59,12 +59,23 @@
 
 #create_account-page #imagePicker {
   position: relative;
+  padding: .4rem;
+}
+
+#create_account-page #choose-Image-hidden {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+#create_account-page #choose-Image-Label {
+  font-family: "Archia";
 }
 
 #create_account-page #textImage {
-  position: absolute;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 #create_account-page .span-edit {
