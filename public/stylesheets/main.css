@@ -8,6 +8,7 @@
 /* -------------------------- // for all the pages! ------------------------- */
 .main {
   width: 100%;
+  min-width: 300px;
   max-width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;

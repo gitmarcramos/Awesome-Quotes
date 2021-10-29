@@ -3,6 +3,7 @@ const quoteModel = require("../models/Quotes.model");
 var router = express.Router();
 const userModel = require("./../models/Users.model");
 const protectUserRoute = require("./../middlewares/protectUserRoute");
+const fileUploader = require('./../config/cloudinary');
 
 // GET users
 router.get("/", (req, res, next) => {
@@ -58,8 +59,13 @@ router.get("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
 });
 
 // POST update USER INFOS route
-router.post("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
+router.post("/:pseudo/edit", protectUserRoute, fileUploader.single('profilePic'), async (req, res, next) => {
   try {
+
+    if(req.file){
+      updateUser.profilePic = req.file.path
+    }
+
     const updateUser = await userModel.findOneAndUpdate(
       req.params.pseudo,
       req.body,
