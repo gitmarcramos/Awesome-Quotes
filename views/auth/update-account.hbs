@@ -11,17 +11,15 @@
             <img src="/images/icons/user-icon.png" alt="user-icon">
         </a>
         <label for="textImage"></label>
-        <input class="input" type="file" id="textImage" name="image">
+        <input class="input" type="file" id="textImage" name="profilePic">
 
-        <input class="input" type="email" id="email" name="email" placeholder="Update your email *" required="true" value="{{foundUser.mail}}">
+        <input class="input" type="email" id="mail" name="mail" placeholder="Update your email *" required="true" value="{{foundUser.mail}}">
 
         <input class="input" type="password" id="password" name="password" placeholder="New password *" required="true">
 
         <input class="input" type="password" id="password-confirm" name="password-confirm" placeholder="Confirm new password *" required="true">
 
         <input placeholder="Name" class="input" name="name" type="text" value="{{foundUser.name}}">
-
-        <input class="input" type="text" id="username" name="username" placeholder="Update your username *" required="true" value="{{foundUser.pseudo}}">
 
         <textarea name="description" id="story" cols="30" rows="10" placeholder="Tell us about you!" >{{foundUser.description}}</textarea>
 
