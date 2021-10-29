@@ -11,6 +11,12 @@
             <img src="/images/logo/awesome-quote-logo-inline.png" alt="Awesome Quotes logo">
         </a>
 
+        {{#if isLoggedIn}}
+        <a href="/users/my-account">
+            <img src="{{currentUser.profilPic}}"
+                alt="User profil picture" class="profil-pic">
+        </a>
+        {{else}}
         <a href="/auth/login">
             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12.5" cy="12" r="12" fill="#444444" />
@@ -22,8 +28,9 @@
                     d="M12.5 10.5882C14.0593 10.5882 15.3235 9.32408 15.3235 7.76469C15.3235 6.2053 14.0593 4.94116 12.5 4.94116C10.9406 4.94116 9.67643 6.2053 9.67643 7.76469C9.67643 9.32408 10.9406 10.5882 12.5 10.5882Z"
                     stroke="#FFFCEC" stroke-width="0.705882" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-
         </a>
+        {{/if}}
+
     </div>
 
     <div class="line-separation"></div>

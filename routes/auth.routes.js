@@ -6,7 +6,6 @@ const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 const fileUploader = require('./../config/cloudinary');
 
 
-
 // router.use(protectAuthRoute);
 // DEBUG has to be removed
 
@@ -58,15 +57,21 @@ router.post("/login", async function (req, res, next) {
 
 
 //GET create-account page
-router.get("/create-account",fileUploader.single('image'), function (req, res, next) {
+router.get("/create-account", function (req, res, next) {
   res.render("auth/create-account");
 });
 
 
 // POST create-account page
-router.post("/create-account", async (req, res, next) => {
+router.post("/create-account",fileUploader.single('image'), async (req, res, next) => {
   try {
     const newUser = { ...req.body };
+
+    // check if profil pic is uploaded by user
+    if(req.file){
+      newUser.profilePic = req.file.path
+    }
+
     const foundUser = await userModel.findOne({ mail: newUser.mail });
 
     console.log(newUser);
