@@ -1,25 +1,25 @@
 <div class="user_profil" id="user-page">
     <div class="user_main_infos">
         <img src="/images/icons/user-icon.png" alt="User icon" class="user-icon">
-        <span class="body-bold">{{user.name}}</span>
-        <span class="suggestion-modal">{{user.pseudo}}</span>
+        <span class="body-bold">{{name}}</span>
+        <span class="suggestion-modal">{{pseudo}}</span>
     </div>
     
     <div class="user_stats-container">
         <div class="user_stats user_stats--liked">
-            <span class="body-bold">{{user.likes.length}}</span>
+            <span class="body-bold">{{likes.length}}</span>
             <span class="suggestion-modal grey">Liked</span>
         </div>
         <div class="user_stats user_stats--saved">
-            <span class="body-bold">{{user.favorites.length}}</span>
+            <span class="body-bold">{{favorites.length}}</span>
             <span class="suggestion-modal grey">Saved</span>
         </div>
         <div class="user_stats user_stats--followers">
-            <span class="body-bold">{{user.followers.length}}</span>
+            <span class="body-bold">{{followers.length}}</span>
             <span class="suggestion-modal grey">Followers</span>
         </div>
         <div class="user_stats user_stats--followers">
-            <span class="body-bold">{{user.following.length}}</span>
+            <span class="body-bold">{{following.length}}</span>
             <span class="suggestion-modal grey">Following</span>
         </div>
 

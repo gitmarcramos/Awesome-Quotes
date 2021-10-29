@@ -60,7 +60,7 @@ router.get("/:id([a-z0-9]{24})", async (req, res, next) => {
 
 router.post("/:id/like", protectUserRoute, async (req, res, next) => {
   try {
-    const user = await userModel.findById(req.locals.currentUser._id);
+    const user = await userModel.findById(req.session.currentUser._id);
     const quote = await quoteModel.findById(req.params.id);
     let index = user.likes.indexOf(quote._id);
     if (index > -1) {
@@ -70,7 +70,7 @@ router.post("/:id/like", protectUserRoute, async (req, res, next) => {
       user.likes.push(quote._id);
       quote.likes++;
     }
-    await userModel.findByIdAndUpdate(req.locals.currentUser._id, user);
+    await userModel.findByIdAndUpdate(req.session.currentUser._id, user);
     await quoteModel.findByIdAndUpdate(req.params.id, quote);
   } catch (err) {
     console.error(err);
@@ -79,7 +79,7 @@ router.post("/:id/like", protectUserRoute, async (req, res, next) => {
 
 router.post("/:id/favorite", protectUserRoute, async (req, res, next) => {
   try {
-    const user = await userModel.findById(req.locals.currentUser._id);
+    const user = await userModel.findById(req.session.currentUser._id);
     const quote = await quoteModel.findById(req.params.id);
     let index = user.favorites.indexOf(quote._id);
     if (index > -1) {
