@@ -47,12 +47,23 @@
 
     #imagePicker {
         position: relative;
+        padding: .4rem;
+    }
+
+    #choose-Image-hidden{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    #choose-Image-Label{
+        font-family: "Archia";
     }
 
     #textImage {
-        position: absolute;
-        width: 0;
-        height: 0;
+        display: none
     }
 
     .span-edit {

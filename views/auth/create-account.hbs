@@ -9,12 +9,13 @@
     </div>
 
 
-    <form method="post" action="/auth/create-account" class="form">
+    <form method="post" action="/auth/create-account" class="form" enctype="multipart/form-data">
 
         <a href="" id="imagePicker">
             <img src="/images/icons/user-icon.png" alt="user-icon">
         </a>
-        <label for="textImage"></label>
+        <label for="textImage" id="choose-Image-hidden"></label>
+        <label for="textImage" id="choose-Image-Label">Upload image</label>
         <input class="input" type="file" id="textImage" name="image">
 
         <input class="input" type="email" id="email" name="email" placeholder="What is your email *" required>

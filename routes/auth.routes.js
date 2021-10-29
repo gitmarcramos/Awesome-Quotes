@@ -3,6 +3,9 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const userModel = require("./../models/Users.model");
 const protectAuthRoute = require("./../middlewares/protectAuthRoute");
+const fileUploader = require('./../config/cloudinary');
+
+
 
 // router.use(protectAuthRoute);
 // DEBUG has to be removed
@@ -54,9 +57,8 @@ router.post("/login", async function (req, res, next) {
 });
 
 
-
 //GET create-account page
-router.get("/create-account", function (req, res, next) {
+router.get("/create-account",fileUploader.single('image'), function (req, res, next) {
   res.render("auth/create-account");
 });
 

@@ -10,3 +10,5 @@ module.exports = function exposeLoginStatus(req, res, next) {
   }
   next();
 };
+
+// current user infos dans les currentUser (parce que q'est du local cookie)
