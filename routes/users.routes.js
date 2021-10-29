@@ -52,8 +52,7 @@ router.get("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
       css: ["user-profil.css", "quote-card.css"],
     });
   } catch (err) {
-    console;
-    log(err, "There was an error finding the user to update");
+    console.log(err, "There was an error finding the user to update");
   }
 });
 
@@ -68,6 +67,15 @@ router.post("/:pseudo/edit", protectUserRoute, async (req, res, next) => {
     res.redirect("/users/my-account");
   } catch (err) {
     console.log(err, "There was an error updating your account");
+  }
+});
+
+router.get("/:pseudo/delete", protectUserRoute, async (req, res, next) => {
+  try {
+    await userModel.findOneAndDelete({ pseudo: req.params.pseudo });
+    res.redirect("/auth/login");
+  } catch (err) {
+    console.log(err, "There was an error finding the user to delete");
   }
 });
 
