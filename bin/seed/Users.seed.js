@@ -2,6 +2,7 @@
 require("dotenv").config();
 require("./../../config/mongodb"); // fetch the db connection
 const userModel = require("./../../models/Users.model"); // fetch the model to validate our user document before insertion (in database)
+const bcrypt = require("bcrypt");
 
 const users = [
   {
@@ -16,7 +17,7 @@ const users = [
     name: "Marc",
     pseudo: "MarcWeb",
     mail: "marc@mail.com",
-    password: "aaa",
+    password: "",
     role: "admin",
     creationDate: new Date('2021-10-18T15:00:00'),
   },
@@ -25,7 +26,7 @@ const users = [
     name: "Joey",
     pseudo: "Hang",
     mail: "superuser@mail.com",
-    password: "oui",
+    password: "",
     description: "I'm Joey and I love Awesome Quotes !",
     creationDate: new Date('2021-10-18T15:12:45'),
   },
@@ -34,6 +35,10 @@ const users = [
 (async function insertTestusers() {
   try {
     await userModel.deleteMany(); // empty the users db collection
+    const hashedPassword = bcrypt.hashSync("123", 10);
+      users[0].password = hashedPassword;
+      users[1].password = hashedPassword;
+      users[2].password = hashedPassword;
     const inserted = await userModel.insertMany(users); // insert docs in db
     console.log(`seed users done : ${inserted.length} documents inserted !`);
     const usersDb = await Promise.all([

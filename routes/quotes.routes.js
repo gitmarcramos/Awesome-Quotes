@@ -5,14 +5,14 @@ const userModel = require("./../models/Users.model");
 const protectUserRoute = require("./../middlewares/protectUserRoute");
 
 // GET Create quote
-router.get("/create-quote", (req, res, next) => {
+router.get("/create-quote", protectUserRoute, (req, res, next) => {
   res.render("partials/quote_create", {
     script: ["add-person.js", "format-date.js"],
     css: ["quote-create.css"],
   });
 });
 
-router.post("/create-quote", async (req, res, next) => {
+router.post("/create-quote", protectUserRoute, async (req, res, next) => {
   try {
     const userDebug = await userModel.find({ name: "Paul" });
     const { user, text } = req.body;
@@ -30,7 +30,7 @@ router.post("/create-quote", async (req, res, next) => {
       ...req.body,
       dateCreatedAt: new Date(Date.now()),
       quotes: quotes,
-      publisher: userDebug[0]._id, // to change to req.locals.currentUser._id
+      publisher: req.session.currentUser._id
     };
     console.log(quotes);
     await quoteModel.create(newQuote);
@@ -89,7 +89,7 @@ router.post("/:id/favorite", protectUserRoute, async (req, res, next) => {
       user.favorites.push(quote._id);
       quote.favorites++;
     }
-    await userModel.findByIdAndUpdate(req.locals.currentUser._id, user);
+    await userModel.findByIdAndUpdate(req.session.currentUser._id, user);
     await quoteModel.findByIdAndUpdate(req.params.id, quote);
   } catch (err) {
     console.error(err);

@@ -4,12 +4,9 @@ const bcrypt = require("bcrypt");
 const userModel = require("./../models/Users.model");
 const protectAuthRoute = require("./../middlewares/protectAuthRoute");
 
-// router.use(protectAuthRoute);
-// DEBUG has to be removed
-
 
 // GET login page
-router.get("/login", function (req, res, next) {
+router.get("/login", protectAuthRoute, function (req, res, next) {
   res.render("auth/login");
 });
 
@@ -27,7 +24,7 @@ router.get("/", function (req, res, next) {
 
 
 // POST login page
-router.post("/login", async function (req, res, next) {
+router.post("/login", protectAuthRoute, async function (req, res, next) {
   const { mail, password } = req.body;
   const foundUser = await userModel.findOne({ mail: mail });
 
@@ -36,8 +33,7 @@ router.post("/login", async function (req, res, next) {
     req.flash("error", "Invalid credentials");
     res.redirect("/auth/login");
   } else {
-    //const isSamePassword = bcrypt.compareSync(password, foundUser.password);
-    const isSamePassword = true;
+    const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
       req.flash("error", "Invalid credentials");
       res.redirect("/auth/login");
@@ -56,13 +52,13 @@ router.post("/login", async function (req, res, next) {
 
 
 //GET create-account page
-router.get("/create-account", function (req, res, next) {
+router.get("/create-account", protectAuthRoute, function (req, res, next) {
   res.render("auth/create-account");
 });
 
 
 // POST create-account page
-router.post("/create-account", async (req, res, next) => {
+router.post("/create-account", protectAuthRoute, async (req, res, next) => {
   try {
     const newUser = { ...req.body };
     const foundUser = await userModel.findOne({ mail: newUser.mail });
@@ -72,7 +68,7 @@ router.post("/create-account", async (req, res, next) => {
       req.flash("warning", "Email already registered");
       res.redirect("/auth/create-account");
     } else {
-      const hashedPassword = bcrypt.hashSync(newUser.password, 10);
+      const hashedPassword = bcrypt.hashSync(newUser.password[0], 10);
       newUser.password = hashedPassword;
       newUser.creationDate = new Date(Date.now());
       console.log(newUser);

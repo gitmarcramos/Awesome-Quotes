@@ -25,7 +25,28 @@ function likeManager(evt) {
   axios
     .post(route)
     .then((httpResponse) => {
-      console.log(httpResponse.data)
+        window.location = "/auth/login";
+    }) // is success
+    .catch((err) => console.error(err)); // if failure
+
+}
+
+function favoriteManager(evt) {
+  const favoriteTotal = evt.currentTarget.closest(".quote_social__item--favorite").querySelector('.social-links');
+  const id = evt.currentTarget.closest('.quote').getAttribute('data-value');
+  const route = `/quotes/${id}/favorite`;
+  console.log(favoriteTotal);
+  let number = favoriteTotal.innerText;
+  if (evt.currentTarget.querySelector('svg').classList.contains('svg-fill'))
+    number--;
+  else
+    number++;
+  favoriteTotal.innerText = number;
+
+  axios
+    .post(route)
+    .then((httpResponse) => {
+        window.location = "/auth/login";
     }) // is success
     .catch((err) => console.error(err)); // if failure
 
@@ -34,6 +55,7 @@ function likeManager(evt) {
 icons.forEach((icon) => {
   icon.addEventListener("click", (e) => {
     likeManager(e);
+    favoriteManager(e);
     iconAnimate(e.currentTarget.querySelector('.quote_social-svg-icon'));
     svgFill(e.currentTarget.querySelector('svg'));
   });
