@@ -35,6 +35,7 @@ router.get("/:pseudo", async (req, res, next) => {
     res.render("users", {
       user,
       listQuotes,
+      script: ["animation.js", "format-date.js"],
       css: ["user-profil.css", "quote-card.css"],
     });
   } catch (error) {
