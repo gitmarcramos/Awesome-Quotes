@@ -59,6 +59,11 @@ app.use("/filter", filterRouter);
 app.use("/quotes", quoteRouter)
 
 
+// To handle
+app.use("/*", (req, res, next) => {
+  res.redirect("/")
+})
+
 
 // SESSION SETUP
 
