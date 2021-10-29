@@ -4,21 +4,21 @@
 
     <h1 class="title">My account</h1>
 
-    {{>user_profil user}}
+    {{>user_profil currentUser}}
 
     <div class="user_profil_infos_container">
         <div class="user_profil_infos_container-infos">
             <h3 class="body-bold">My infos</h3>
             <div class="user_profil_infos_container-infos--item">
                 <span class="social-links grey">Email</span>
-                <span class="published-by grey">{{mail}}</span>
+                <span class="published-by grey">{{currentUser.mail}}</span>
             </div>
             <div class="user_profil_infos_container-infos--item">
                 <span class="social-links grey">ID</span>
-                <span class="published-by grey">{{_id}}</span>
+                <span class="published-by grey">{{currentUser._id}}</span>
             </div>
     
-            <a href="/users/{{pseudo}}/edit" class="published-by-link grey">Edit my information</a>
+            <a href="/users/{{currentUser.pseudo}}/edit" class="published-by-link grey">Edit my information</a>
         </div>
 
         <div class="user_profil_infos_container-danger">

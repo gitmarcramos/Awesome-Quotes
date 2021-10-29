@@ -14,10 +14,7 @@ router.get("/", (req, res, next) => {
 /* GET users/my-account */
 router.get("/my-account", protectUserRoute, async (req, res, next) => {
   try {
-    const user = await userModel.findOne({pseudo: req.session.pseudo});
-    console.log(req.session.pseudo, user);
     res.render("my_account", {
-      user,
       css: ["user-profil.css", "quote-card.css"],
     });
   } catch (err) {
