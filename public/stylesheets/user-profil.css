@@ -31,6 +31,7 @@
 .user_profil .user_main_infos img {
   -o-object-fit: contain;
      object-fit: contain;
+  border-radius: 50%;
 }
 
 .user_profil .user_main_infos .body-bold {
