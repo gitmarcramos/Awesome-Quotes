@@ -35,6 +35,10 @@
   margin: 3.2rem 0;
 }
 
+#user_page {
+  padding-bottom: 7rem;
+}
+
 #user_page .user_quote_card .main {
   padding-top: 0;
 }
